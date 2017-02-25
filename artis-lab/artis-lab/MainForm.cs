@@ -13,6 +13,7 @@ namespace artis_lab
 {
     public partial class MainForm : Form
     {
+        Controller controller;
         public MainForm()
         {
             InitializeComponent();

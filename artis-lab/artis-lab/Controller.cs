@@ -8,5 +8,16 @@ namespace artis_lab
 {
     class Controller
     {
+        MainForm mainForm;
+
+        public Controller(MainForm mainForm)
+        {
+            this.mainForm = mainForm;
+        }
+
+        public void logIn()
+        {
+
+        }
     }
 }
