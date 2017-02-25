@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuTopMenu = new System.Windows.Forms.MenuStrip();
             this.menuUsers = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMyAccount = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBtnManageUsers = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,19 +36,19 @@
             this.menuBtnSeeTopUsers = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBtnLogIn = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBtnLogOut = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.menuTopMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // menuTopMenu
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuTopMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuUsers,
             this.menuMyAccount});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1008, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuTopMenu.Location = new System.Drawing.Point(0, 0);
+            this.menuTopMenu.Name = "menuTopMenu";
+            this.menuTopMenu.Size = new System.Drawing.Size(1008, 24);
+            this.menuTopMenu.TabIndex = 0;
+            this.menuTopMenu.Text = "menuStrip1";
             // 
             // menuUsers
             // 
@@ -104,12 +104,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 729);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.menuTopMenu);
+            this.MainMenuStrip = this.menuTopMenu;
             this.Name = "MainForm";
             this.Text = "ARTIS Lab Admin";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuTopMenu.ResumeLayout(false);
+            this.menuTopMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,7 +117,7 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuTopMenu;
         private System.Windows.Forms.ToolStripMenuItem menuUsers;
         private System.Windows.Forms.ToolStripMenuItem menuBtnManageUsers;
         private System.Windows.Forms.ToolStripMenuItem menuBtnAddNewUser;
