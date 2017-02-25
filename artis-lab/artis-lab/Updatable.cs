@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace artis_lab
 {
-    class Controller
+    interface Updatable
     {
+        void save();
     }
 }

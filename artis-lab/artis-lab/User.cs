@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace artis_lab
 {
-    class Controller
+    class User : Updatable
     {
+        public void save()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
