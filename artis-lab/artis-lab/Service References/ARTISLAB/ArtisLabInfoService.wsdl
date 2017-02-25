@@ -1,0 +1,1259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.radford.edu/ArtisLab" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.radford.edu/ArtisLab" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">provides Artis Lab User information to any platform</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.radford.edu/ArtisLab">
+      <s:element name="logIn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="logInResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="logInResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="logOut">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="logOutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="logOutResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getResUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getResUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getResUserResult" type="tns:ResUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrivLevel" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreateDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dbMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecentReservations">
+            <s:complexType>
+              <s:sequence>
+                <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getTopUsers">
+        <s:complexType />
+      </s:element>
+      <s:element name="getTopUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTopUsersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getResourceUsage">
+        <s:complexType />
+      </s:element>
+      <s:element name="getResourceUsageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getResourceUsageResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getResources">
+        <s:complexType />
+      </s:element>
+      <s:element name="getResourcesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getResourcesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPrivLevels">
+        <s:complexType />
+      </s:element>
+      <s:element name="getPrivLevelsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPrivLevelsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="saveResUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResUserToSave" type="tns:ResUser" />
+            <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="saveResUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="saveResUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertResUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResUserToSave" type="tns:ResUser" />
+            <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertResUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insertResUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteResUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsernameToDelete" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteResUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteResUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="usernameContains">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strToFind" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="usernameContainsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usernameContainsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="usernameStartsWith">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strToFind" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="usernameStartsWithResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usernameStartsWithResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="notesContains">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strToFind" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="notesContainsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="notesContainsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSemesterNames">
+        <s:complexType />
+      </s:element>
+      <s:element name="getSemesterNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSemesterNamesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getResUsers">
+        <s:complexType />
+      </s:element>
+      <s:element name="getResUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getResUsersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="ResUser" nillable="true" type="tns:ResUser" />
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="logInSoapIn">
+    <wsdl:part name="parameters" element="tns:logIn" />
+  </wsdl:message>
+  <wsdl:message name="logInSoapOut">
+    <wsdl:part name="parameters" element="tns:logInResponse" />
+  </wsdl:message>
+  <wsdl:message name="logOutSoapIn">
+    <wsdl:part name="parameters" element="tns:logOut" />
+  </wsdl:message>
+  <wsdl:message name="logOutSoapOut">
+    <wsdl:part name="parameters" element="tns:logOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="getResUserSoapIn">
+    <wsdl:part name="parameters" element="tns:getResUser" />
+  </wsdl:message>
+  <wsdl:message name="getResUserSoapOut">
+    <wsdl:part name="parameters" element="tns:getResUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTopUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:getTopUsers" />
+  </wsdl:message>
+  <wsdl:message name="getTopUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:getTopUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="getResourceUsageSoapIn">
+    <wsdl:part name="parameters" element="tns:getResourceUsage" />
+  </wsdl:message>
+  <wsdl:message name="getResourceUsageSoapOut">
+    <wsdl:part name="parameters" element="tns:getResourceUsageResponse" />
+  </wsdl:message>
+  <wsdl:message name="getResourcesSoapIn">
+    <wsdl:part name="parameters" element="tns:getResources" />
+  </wsdl:message>
+  <wsdl:message name="getResourcesSoapOut">
+    <wsdl:part name="parameters" element="tns:getResourcesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPrivLevelsSoapIn">
+    <wsdl:part name="parameters" element="tns:getPrivLevels" />
+  </wsdl:message>
+  <wsdl:message name="getPrivLevelsSoapOut">
+    <wsdl:part name="parameters" element="tns:getPrivLevelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="saveResUserSoapIn">
+    <wsdl:part name="parameters" element="tns:saveResUser" />
+  </wsdl:message>
+  <wsdl:message name="saveResUserSoapOut">
+    <wsdl:part name="parameters" element="tns:saveResUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertResUserSoapIn">
+    <wsdl:part name="parameters" element="tns:insertResUser" />
+  </wsdl:message>
+  <wsdl:message name="insertResUserSoapOut">
+    <wsdl:part name="parameters" element="tns:insertResUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteResUserSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteResUser" />
+  </wsdl:message>
+  <wsdl:message name="deleteResUserSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteResUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="usernameContainsSoapIn">
+    <wsdl:part name="parameters" element="tns:usernameContains" />
+  </wsdl:message>
+  <wsdl:message name="usernameContainsSoapOut">
+    <wsdl:part name="parameters" element="tns:usernameContainsResponse" />
+  </wsdl:message>
+  <wsdl:message name="usernameStartsWithSoapIn">
+    <wsdl:part name="parameters" element="tns:usernameStartsWith" />
+  </wsdl:message>
+  <wsdl:message name="usernameStartsWithSoapOut">
+    <wsdl:part name="parameters" element="tns:usernameStartsWithResponse" />
+  </wsdl:message>
+  <wsdl:message name="notesContainsSoapIn">
+    <wsdl:part name="parameters" element="tns:notesContains" />
+  </wsdl:message>
+  <wsdl:message name="notesContainsSoapOut">
+    <wsdl:part name="parameters" element="tns:notesContainsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSemesterNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:getSemesterNames" />
+  </wsdl:message>
+  <wsdl:message name="getSemesterNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:getSemesterNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getResUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:getResUsers" />
+  </wsdl:message>
+  <wsdl:message name="getResUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:getResUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="logInHttpGetIn">
+    <wsdl:part name="strUsername" type="s:string" />
+    <wsdl:part name="strPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="logInHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="logOutHttpGetIn">
+    <wsdl:part name="strToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="logOutHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getResUserHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getResUserHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResUser" />
+  </wsdl:message>
+  <wsdl:message name="getTopUsersHttpGetIn" />
+  <wsdl:message name="getTopUsersHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="getResourceUsageHttpGetIn" />
+  <wsdl:message name="getResourceUsageHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="getResourcesHttpGetIn" />
+  <wsdl:message name="getResourcesHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="getPrivLevelsHttpGetIn" />
+  <wsdl:message name="getPrivLevelsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="deleteResUserHttpGetIn">
+    <wsdl:part name="UsernameToDelete" type="s:string" />
+    <wsdl:part name="Token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteResUserHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="usernameContainsHttpGetIn">
+    <wsdl:part name="strToFind" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="usernameContainsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="usernameStartsWithHttpGetIn">
+    <wsdl:part name="strToFind" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="usernameStartsWithHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="notesContainsHttpGetIn">
+    <wsdl:part name="strToFind" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="notesContainsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="getSemesterNamesHttpGetIn" />
+  <wsdl:message name="getSemesterNamesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="getResUsersHttpGetIn" />
+  <wsdl:message name="getResUsersHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="logInHttpPostIn">
+    <wsdl:part name="strUsername" type="s:string" />
+    <wsdl:part name="strPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="logInHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="logOutHttpPostIn">
+    <wsdl:part name="strToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="logOutHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getResUserHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getResUserHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResUser" />
+  </wsdl:message>
+  <wsdl:message name="getTopUsersHttpPostIn" />
+  <wsdl:message name="getTopUsersHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="getResourceUsageHttpPostIn" />
+  <wsdl:message name="getResourceUsageHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="getResourcesHttpPostIn" />
+  <wsdl:message name="getResourcesHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="getPrivLevelsHttpPostIn" />
+  <wsdl:message name="getPrivLevelsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="deleteResUserHttpPostIn">
+    <wsdl:part name="UsernameToDelete" type="s:string" />
+    <wsdl:part name="Token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteResUserHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="usernameContainsHttpPostIn">
+    <wsdl:part name="strToFind" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="usernameContainsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="usernameStartsWithHttpPostIn">
+    <wsdl:part name="strToFind" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="usernameStartsWithHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="notesContainsHttpPostIn">
+    <wsdl:part name="strToFind" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="notesContainsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="getSemesterNamesHttpPostIn" />
+  <wsdl:message name="getSemesterNamesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="getResUsersHttpPostIn" />
+  <wsdl:message name="getResUsersHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:portType name="ArtisLabInfoServiceSoap">
+    <wsdl:operation name="logIn">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">authenticate user and return token</wsdl:documentation>
+      <wsdl:input message="tns:logInSoapIn" />
+      <wsdl:output message="tns:logInSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="logOut">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">log out</wsdl:documentation>
+      <wsdl:input message="tns:logOutSoapIn" />
+      <wsdl:output message="tns:logOutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getResUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get a ResUser object</wsdl:documentation>
+      <wsdl:input message="tns:getResUserSoapIn" />
+      <wsdl:output message="tns:getResUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTopUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">return list of top reservers</wsdl:documentation>
+      <wsdl:input message="tns:getTopUsersSoapIn" />
+      <wsdl:output message="tns:getTopUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getResourceUsage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">return resource use list</wsdl:documentation>
+      <wsdl:input message="tns:getResourceUsageSoapIn" />
+      <wsdl:output message="tns:getResourceUsageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getResources">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">return list of resources</wsdl:documentation>
+      <wsdl:input message="tns:getResourcesSoapIn" />
+      <wsdl:output message="tns:getResourcesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPrivLevels">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">return list of PrivLevels</wsdl:documentation>
+      <wsdl:input message="tns:getPrivLevelsSoapIn" />
+      <wsdl:output message="tns:getPrivLevelsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveResUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Save changes to a ResUser back to the database</wsdl:documentation>
+      <wsdl:input message="tns:saveResUserSoapIn" />
+      <wsdl:output message="tns:saveResUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertResUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert a new ResUser into the database</wsdl:documentation>
+      <wsdl:input message="tns:insertResUserSoapIn" />
+      <wsdl:output message="tns:insertResUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteResUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a ResUser from the database</wsdl:documentation>
+      <wsdl:input message="tns:deleteResUserSoapIn" />
+      <wsdl:output message="tns:deleteResUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="usernameContains">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Search for user with a keyword or substring in the username</wsdl:documentation>
+      <wsdl:input message="tns:usernameContainsSoapIn" />
+      <wsdl:output message="tns:usernameContainsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="usernameStartsWith">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Search for user with a keyword or substring at the start of the username</wsdl:documentation>
+      <wsdl:input message="tns:usernameStartsWithSoapIn" />
+      <wsdl:output message="tns:usernameStartsWithSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="notesContains">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Search for user with a keyword or substring in the notes</wsdl:documentation>
+      <wsdl:input message="tns:notesContainsSoapIn" />
+      <wsdl:output message="tns:notesContainsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSemesterNames">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Find most recent three semester names</wsdl:documentation>
+      <wsdl:input message="tns:getSemesterNamesSoapIn" />
+      <wsdl:output message="tns:getSemesterNamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getResUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get a list of all reservation users (just the username)</wsdl:documentation>
+      <wsdl:input message="tns:getResUsersSoapIn" />
+      <wsdl:output message="tns:getResUsersSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ArtisLabInfoServiceHttpGet">
+    <wsdl:operation name="logIn">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">authenticate user and return token</wsdl:documentation>
+      <wsdl:input message="tns:logInHttpGetIn" />
+      <wsdl:output message="tns:logInHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="logOut">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">log out</wsdl:documentation>
+      <wsdl:input message="tns:logOutHttpGetIn" />
+      <wsdl:output message="tns:logOutHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getResUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get a ResUser object</wsdl:documentation>
+      <wsdl:input message="tns:getResUserHttpGetIn" />
+      <wsdl:output message="tns:getResUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTopUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">return list of top reservers</wsdl:documentation>
+      <wsdl:input message="tns:getTopUsersHttpGetIn" />
+      <wsdl:output message="tns:getTopUsersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getResourceUsage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">return resource use list</wsdl:documentation>
+      <wsdl:input message="tns:getResourceUsageHttpGetIn" />
+      <wsdl:output message="tns:getResourceUsageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getResources">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">return list of resources</wsdl:documentation>
+      <wsdl:input message="tns:getResourcesHttpGetIn" />
+      <wsdl:output message="tns:getResourcesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPrivLevels">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">return list of PrivLevels</wsdl:documentation>
+      <wsdl:input message="tns:getPrivLevelsHttpGetIn" />
+      <wsdl:output message="tns:getPrivLevelsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteResUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a ResUser from the database</wsdl:documentation>
+      <wsdl:input message="tns:deleteResUserHttpGetIn" />
+      <wsdl:output message="tns:deleteResUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="usernameContains">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Search for user with a keyword or substring in the username</wsdl:documentation>
+      <wsdl:input message="tns:usernameContainsHttpGetIn" />
+      <wsdl:output message="tns:usernameContainsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="usernameStartsWith">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Search for user with a keyword or substring at the start of the username</wsdl:documentation>
+      <wsdl:input message="tns:usernameStartsWithHttpGetIn" />
+      <wsdl:output message="tns:usernameStartsWithHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="notesContains">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Search for user with a keyword or substring in the notes</wsdl:documentation>
+      <wsdl:input message="tns:notesContainsHttpGetIn" />
+      <wsdl:output message="tns:notesContainsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSemesterNames">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Find most recent three semester names</wsdl:documentation>
+      <wsdl:input message="tns:getSemesterNamesHttpGetIn" />
+      <wsdl:output message="tns:getSemesterNamesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getResUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get a list of all reservation users (just the username)</wsdl:documentation>
+      <wsdl:input message="tns:getResUsersHttpGetIn" />
+      <wsdl:output message="tns:getResUsersHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ArtisLabInfoServiceHttpPost">
+    <wsdl:operation name="logIn">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">authenticate user and return token</wsdl:documentation>
+      <wsdl:input message="tns:logInHttpPostIn" />
+      <wsdl:output message="tns:logInHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="logOut">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">log out</wsdl:documentation>
+      <wsdl:input message="tns:logOutHttpPostIn" />
+      <wsdl:output message="tns:logOutHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getResUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get a ResUser object</wsdl:documentation>
+      <wsdl:input message="tns:getResUserHttpPostIn" />
+      <wsdl:output message="tns:getResUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTopUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">return list of top reservers</wsdl:documentation>
+      <wsdl:input message="tns:getTopUsersHttpPostIn" />
+      <wsdl:output message="tns:getTopUsersHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getResourceUsage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">return resource use list</wsdl:documentation>
+      <wsdl:input message="tns:getResourceUsageHttpPostIn" />
+      <wsdl:output message="tns:getResourceUsageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getResources">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">return list of resources</wsdl:documentation>
+      <wsdl:input message="tns:getResourcesHttpPostIn" />
+      <wsdl:output message="tns:getResourcesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPrivLevels">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">return list of PrivLevels</wsdl:documentation>
+      <wsdl:input message="tns:getPrivLevelsHttpPostIn" />
+      <wsdl:output message="tns:getPrivLevelsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteResUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a ResUser from the database</wsdl:documentation>
+      <wsdl:input message="tns:deleteResUserHttpPostIn" />
+      <wsdl:output message="tns:deleteResUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="usernameContains">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Search for user with a keyword or substring in the username</wsdl:documentation>
+      <wsdl:input message="tns:usernameContainsHttpPostIn" />
+      <wsdl:output message="tns:usernameContainsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="usernameStartsWith">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Search for user with a keyword or substring at the start of the username</wsdl:documentation>
+      <wsdl:input message="tns:usernameStartsWithHttpPostIn" />
+      <wsdl:output message="tns:usernameStartsWithHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="notesContains">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Search for user with a keyword or substring in the notes</wsdl:documentation>
+      <wsdl:input message="tns:notesContainsHttpPostIn" />
+      <wsdl:output message="tns:notesContainsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSemesterNames">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Find most recent three semester names</wsdl:documentation>
+      <wsdl:input message="tns:getSemesterNamesHttpPostIn" />
+      <wsdl:output message="tns:getSemesterNamesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getResUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get a list of all reservation users (just the username)</wsdl:documentation>
+      <wsdl:input message="tns:getResUsersHttpPostIn" />
+      <wsdl:output message="tns:getResUsersHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ArtisLabInfoServiceSoap" type="tns:ArtisLabInfoServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="logIn">
+      <soap:operation soapAction="http://www.radford.edu/ArtisLab/logIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logOut">
+      <soap:operation soapAction="http://www.radford.edu/ArtisLab/logOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResUser">
+      <soap:operation soapAction="http://www.radford.edu/ArtisLab/getResUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTopUsers">
+      <soap:operation soapAction="http://www.radford.edu/ArtisLab/getTopUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResourceUsage">
+      <soap:operation soapAction="http://www.radford.edu/ArtisLab/getResourceUsage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResources">
+      <soap:operation soapAction="http://www.radford.edu/ArtisLab/getResources" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPrivLevels">
+      <soap:operation soapAction="http://www.radford.edu/ArtisLab/getPrivLevels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveResUser">
+      <soap:operation soapAction="http://www.radford.edu/ArtisLab/saveResUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertResUser">
+      <soap:operation soapAction="http://www.radford.edu/ArtisLab/insertResUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteResUser">
+      <soap:operation soapAction="http://www.radford.edu/ArtisLab/deleteResUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usernameContains">
+      <soap:operation soapAction="http://www.radford.edu/ArtisLab/usernameContains" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usernameStartsWith">
+      <soap:operation soapAction="http://www.radford.edu/ArtisLab/usernameStartsWith" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="notesContains">
+      <soap:operation soapAction="http://www.radford.edu/ArtisLab/notesContains" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSemesterNames">
+      <soap:operation soapAction="http://www.radford.edu/ArtisLab/getSemesterNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResUsers">
+      <soap:operation soapAction="http://www.radford.edu/ArtisLab/getResUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ArtisLabInfoServiceSoap12" type="tns:ArtisLabInfoServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="logIn">
+      <soap12:operation soapAction="http://www.radford.edu/ArtisLab/logIn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logOut">
+      <soap12:operation soapAction="http://www.radford.edu/ArtisLab/logOut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResUser">
+      <soap12:operation soapAction="http://www.radford.edu/ArtisLab/getResUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTopUsers">
+      <soap12:operation soapAction="http://www.radford.edu/ArtisLab/getTopUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResourceUsage">
+      <soap12:operation soapAction="http://www.radford.edu/ArtisLab/getResourceUsage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResources">
+      <soap12:operation soapAction="http://www.radford.edu/ArtisLab/getResources" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPrivLevels">
+      <soap12:operation soapAction="http://www.radford.edu/ArtisLab/getPrivLevels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveResUser">
+      <soap12:operation soapAction="http://www.radford.edu/ArtisLab/saveResUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertResUser">
+      <soap12:operation soapAction="http://www.radford.edu/ArtisLab/insertResUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteResUser">
+      <soap12:operation soapAction="http://www.radford.edu/ArtisLab/deleteResUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usernameContains">
+      <soap12:operation soapAction="http://www.radford.edu/ArtisLab/usernameContains" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usernameStartsWith">
+      <soap12:operation soapAction="http://www.radford.edu/ArtisLab/usernameStartsWith" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="notesContains">
+      <soap12:operation soapAction="http://www.radford.edu/ArtisLab/notesContains" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSemesterNames">
+      <soap12:operation soapAction="http://www.radford.edu/ArtisLab/getSemesterNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResUsers">
+      <soap12:operation soapAction="http://www.radford.edu/ArtisLab/getResUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ArtisLabInfoServiceHttpGet" type="tns:ArtisLabInfoServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="logIn">
+      <http:operation location="/logIn" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logOut">
+      <http:operation location="/logOut" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResUser">
+      <http:operation location="/getResUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTopUsers">
+      <http:operation location="/getTopUsers" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResourceUsage">
+      <http:operation location="/getResourceUsage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResources">
+      <http:operation location="/getResources" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPrivLevels">
+      <http:operation location="/getPrivLevels" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteResUser">
+      <http:operation location="/deleteResUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usernameContains">
+      <http:operation location="/usernameContains" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usernameStartsWith">
+      <http:operation location="/usernameStartsWith" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="notesContains">
+      <http:operation location="/notesContains" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSemesterNames">
+      <http:operation location="/getSemesterNames" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResUsers">
+      <http:operation location="/getResUsers" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ArtisLabInfoServiceHttpPost" type="tns:ArtisLabInfoServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="logIn">
+      <http:operation location="/logIn" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logOut">
+      <http:operation location="/logOut" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResUser">
+      <http:operation location="/getResUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTopUsers">
+      <http:operation location="/getTopUsers" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResourceUsage">
+      <http:operation location="/getResourceUsage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResources">
+      <http:operation location="/getResources" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPrivLevels">
+      <http:operation location="/getPrivLevels" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteResUser">
+      <http:operation location="/deleteResUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usernameContains">
+      <http:operation location="/usernameContains" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usernameStartsWith">
+      <http:operation location="/usernameStartsWith" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="notesContains">
+      <http:operation location="/notesContains" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSemesterNames">
+      <http:operation location="/getSemesterNames" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResUsers">
+      <http:operation location="/getResUsers" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ArtisLabInfoService">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">provides Artis Lab User information to any platform</wsdl:documentation>
+    <wsdl:port name="ArtisLabInfoServiceSoap" binding="tns:ArtisLabInfoServiceSoap">
+      <soap:address location="http://itec-web-dev04/EWS/ArtisLabInfoService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ArtisLabInfoServiceSoap12" binding="tns:ArtisLabInfoServiceSoap12">
+      <soap12:address location="http://itec-web-dev04/EWS/ArtisLabInfoService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ArtisLabInfoServiceHttpGet" binding="tns:ArtisLabInfoServiceHttpGet">
+      <http:address location="http://itec-web-dev04/EWS/ArtisLabInfoService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ArtisLabInfoServiceHttpPost" binding="tns:ArtisLabInfoServiceHttpPost">
+      <http:address location="http://itec-web-dev04/EWS/ArtisLabInfoService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

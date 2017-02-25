@@ -11,11 +11,13 @@ namespace artis_lab
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        public static ARTISLAB.ArtisLabInfoServiceSoapClient ARTISClient;
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            ARTISClient = new ARTISLAB.ArtisLabInfoServiceSoapClient("ArtisLabInfoServiceSoap");
             Application.Run(new MainForm());
         }
     }
