@@ -36,6 +36,7 @@
             this.menuMyAccount = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBtnLogIn = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBtnLogOut = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblToken = new System.Windows.Forms.Label();
             this.menuTopMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,12 +100,22 @@
             this.menuBtnLogOut.Name = "menuBtnLogOut";
             this.menuBtnLogOut.Size = new System.Drawing.Size(152, 22);
             this.menuBtnLogOut.Text = "Log Out";
+            this.menuBtnLogOut.Click += new System.EventHandler(this.menuBtnLogOut_Click);
+            // 
+            // lblToken
+            // 
+            this.lblToken.AutoSize = true;
+            this.lblToken.Location = new System.Drawing.Point(344, 210);
+            this.lblToken.Name = "lblToken";
+            this.lblToken.Size = new System.Drawing.Size(0, 13);
+            this.lblToken.TabIndex = 1;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.lblToken);
             this.Controls.Add(this.menuTopMenu);
             this.MainMenuStrip = this.menuTopMenu;
             this.Name = "MainForm";
@@ -126,6 +137,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuMyAccount;
         private System.Windows.Forms.ToolStripMenuItem menuBtnLogIn;
         private System.Windows.Forms.ToolStripMenuItem menuBtnLogOut;
+        public System.Windows.Forms.Label lblToken;
     }
 }
 

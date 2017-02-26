@@ -12,9 +12,16 @@ namespace artis_lab
 {
     public partial class ViewLogIn : Form
     {
-        public ViewLogIn()
+        private Controller controller;
+        public ViewLogIn(Controller controller)
         {
             InitializeComponent();
+            this.controller = controller;
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            controller.authenticate(txtUserName.Text, txtPassword.Text);
         }
     }
 }

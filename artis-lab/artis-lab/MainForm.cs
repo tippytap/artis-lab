@@ -23,6 +23,12 @@ namespace artis_lab
         private void menuBtnLogIn_Click(object sender, EventArgs e)
         {
             controller.logIn();
+            
+        }
+
+        private void menuBtnLogOut_Click(object sender, EventArgs e)
+        {
+            controller.logOut();
         }
     }
 }

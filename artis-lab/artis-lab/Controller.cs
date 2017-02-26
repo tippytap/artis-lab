@@ -6,23 +6,51 @@ using System.Threading.Tasks;
 
 namespace artis_lab
 {
-    class Controller
+    public class Controller
     {
-        MainForm mainForm;
+        private MainForm mainForm;
+
+        private String authToken;
+
+        private bool loggedIn;
+
+        private ViewLogIn viewLogin;
 
         public Controller(MainForm mainForm)
         {
             this.mainForm = mainForm;
+            loggedIn = false;
         }
 
         public void logIn()
         {
-            ViewLogIn login = new ViewLogIn();
-            login.ShowDialog();
+            viewLogin = new ViewLogIn(this);
+            viewLogin.ShowDialog();
         }
-        public void authenticate()
+
+        public void authenticate(String username, String password)
         {
-            
+            authToken = User.authenticate(username, password);
+            if(authToken != "Invalid Credentials")
+            {
+                loggedIn = true;
+                viewLogin.Close();
+            }
+            else
+            {
+                viewLogin.lblError.Text = authToken;
+            }
+        }
+
+        public void logOut()
+        {
+            String result = User.logOut(authToken);
+            loggedIn = (result == "Success") ? false : true;
+        }
+
+        public bool isLoggedIn()
+        {
+            return loggedIn;
         }
     }
 }
