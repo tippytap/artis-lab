@@ -30,5 +30,10 @@ namespace artis_lab
         {
             controller.logOut();
         }
+
+        private void menuBtnAddNewUser_Click(object sender, EventArgs e)
+        {
+            controller.newUser();
+        }
     }
 }

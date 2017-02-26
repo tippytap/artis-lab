@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ViewError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewError.Designer.cs">
+      <DependentUpon>ViewError.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewLogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Updatable.cs" />
+    <Compile Include="ViewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewUser.Designer.cs">
+      <DependentUpon>ViewUser.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,8 +95,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ViewError.resx">
+      <DependentUpon>ViewError.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewLogIn.resx">
       <DependentUpon>ViewLogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewUser.resx">
+      <DependentUpon>ViewUser.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Properties\Settings.settings">

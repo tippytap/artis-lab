@@ -15,6 +15,8 @@ namespace artis_lab
         private bool loggedIn;
 
         private ViewLogIn viewLogin;
+        private ViewUser viewUser;
+        private ViewError viewError;
 
         public Controller(MainForm mainForm)
         {
@@ -51,6 +53,21 @@ namespace artis_lab
         public bool isLoggedIn()
         {
             return loggedIn;
+        }
+
+        public void newUser()
+        {
+            if (isLoggedIn())
+            {
+                viewUser = new ViewUser();
+                viewUser.ShowDialog();
+            }
+            else
+            {
+                viewError = new ViewError();
+                viewError.lblMessage.Text = "You must be logged in to perform this action.";
+                viewError.ShowDialog();
+            }
         }
     }
 }

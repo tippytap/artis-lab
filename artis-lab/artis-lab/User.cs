@@ -10,6 +10,8 @@ namespace artis_lab
     class User : Updatable
     {
 
+        ARTISLAB.ResUser user;
+
         public void save()
         {
             throw new NotImplementedException();

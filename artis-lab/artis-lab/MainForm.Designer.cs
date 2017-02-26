@@ -72,6 +72,7 @@
             this.menuBtnAddNewUser.Name = "menuBtnAddNewUser";
             this.menuBtnAddNewUser.Size = new System.Drawing.Size(158, 22);
             this.menuBtnAddNewUser.Text = "Add New User...";
+            this.menuBtnAddNewUser.Click += new System.EventHandler(this.menuBtnAddNewUser_Click);
             // 
             // menuBtnSeeTopUsers
             // 
