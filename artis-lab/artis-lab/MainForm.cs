@@ -35,5 +35,10 @@ namespace artis_lab
         {
             controller.newUser();
         }
+
+        private void menuBtnManageUsers_Click(object sender, EventArgs e)
+        {
+            controller.manageUsers();
+        }
     }
 }

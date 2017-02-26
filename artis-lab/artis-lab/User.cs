@@ -26,5 +26,16 @@ namespace artis_lab
         {
             return Program.ARTISClient.logOut(authToken);
         }
+
+        public static ARTISLAB.ResUser find(String username, String token)
+        {
+            ARTISLAB.ResUser foundUser = Program.ARTISClient.getResUser(username, token);
+            return foundUser;
+        }
+
+        public static System.Data.DataTable getAllUsers()
+        {
+            return Program.ARTISClient.getResUsers();
+        }
     }
 }

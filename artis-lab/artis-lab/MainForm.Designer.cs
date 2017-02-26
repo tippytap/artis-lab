@@ -66,6 +66,7 @@
             this.menuBtnManageUsers.Name = "menuBtnManageUsers";
             this.menuBtnManageUsers.Size = new System.Drawing.Size(158, 22);
             this.menuBtnManageUsers.Text = "Manage Users...";
+            this.menuBtnManageUsers.Click += new System.EventHandler(this.menuBtnManageUsers_Click);
             // 
             // menuBtnAddNewUser
             // 
@@ -93,7 +94,7 @@
             // 
             this.menuBtnLogIn.Name = "menuBtnLogIn";
             this.menuBtnLogIn.Size = new System.Drawing.Size(152, 22);
-            this.menuBtnLogIn.Text = "Log In..";
+            this.menuBtnLogIn.Text = "Log In...";
             this.menuBtnLogIn.Click += new System.EventHandler(this.menuBtnLogIn_Click);
             // 
             // menuBtnLogOut
@@ -136,9 +137,9 @@
         private System.Windows.Forms.ToolStripMenuItem menuBtnAddNewUser;
         private System.Windows.Forms.ToolStripMenuItem menuBtnSeeTopUsers;
         private System.Windows.Forms.ToolStripMenuItem menuMyAccount;
-        private System.Windows.Forms.ToolStripMenuItem menuBtnLogIn;
         private System.Windows.Forms.ToolStripMenuItem menuBtnLogOut;
         public System.Windows.Forms.Label lblToken;
+        public System.Windows.Forms.ToolStripMenuItem menuBtnLogIn;
     }
 }
 

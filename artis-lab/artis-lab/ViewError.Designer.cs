@@ -60,7 +60,7 @@
             this.Controls.Add(this.btnGotIt);
             this.Controls.Add(this.lblMessage);
             this.Name = "ViewError";
-            this.Text = "ViewError";
+            this.Text = "Error";
             this.ResumeLayout(false);
             this.PerformLayout();
 
