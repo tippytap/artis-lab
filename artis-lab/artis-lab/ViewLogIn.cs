@@ -7,22 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Diagnostics;
 
 namespace artis_lab
 {
-    public partial class MainForm : Form
+    public partial class ViewLogIn : Form
     {
-        Controller controller;
-        public MainForm()
+        public ViewLogIn()
         {
             InitializeComponent();
-            controller = new Controller(this);
-        }
-
-        private void menuBtnLogIn_Click(object sender, EventArgs e)
-        {
-            controller.logIn();
         }
     }
 }

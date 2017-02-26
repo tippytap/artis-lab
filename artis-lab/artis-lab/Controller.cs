@@ -17,7 +17,12 @@ namespace artis_lab
 
         public void logIn()
         {
-
+            ViewLogIn login = new ViewLogIn();
+            login.ShowDialog();
+        }
+        public void authenticate()
+        {
+            
         }
     }
 }

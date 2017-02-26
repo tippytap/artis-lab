@@ -30,10 +30,10 @@
         {
             this.menuTopMenu = new System.Windows.Forms.MenuStrip();
             this.menuUsers = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuMyAccount = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBtnManageUsers = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBtnAddNewUser = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBtnSeeTopUsers = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuMyAccount = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBtnLogIn = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBtnLogOut = new System.Windows.Forms.ToolStripMenuItem();
             this.menuTopMenu.SuspendLayout();
@@ -60,15 +60,6 @@
             this.menuUsers.Size = new System.Drawing.Size(47, 20);
             this.menuUsers.Text = "Users";
             // 
-            // menuMyAccount
-            // 
-            this.menuMyAccount.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuBtnLogIn,
-            this.menuBtnLogOut});
-            this.menuMyAccount.Name = "menuMyAccount";
-            this.menuMyAccount.Size = new System.Drawing.Size(84, 20);
-            this.menuMyAccount.Text = "My Account";
-            // 
             // menuBtnManageUsers
             // 
             this.menuBtnManageUsers.Name = "menuBtnManageUsers";
@@ -87,11 +78,21 @@
             this.menuBtnSeeTopUsers.Size = new System.Drawing.Size(158, 22);
             this.menuBtnSeeTopUsers.Text = "See Top Users";
             // 
+            // menuMyAccount
+            // 
+            this.menuMyAccount.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuBtnLogIn,
+            this.menuBtnLogOut});
+            this.menuMyAccount.Name = "menuMyAccount";
+            this.menuMyAccount.Size = new System.Drawing.Size(84, 20);
+            this.menuMyAccount.Text = "My Account";
+            // 
             // menuBtnLogIn
             // 
             this.menuBtnLogIn.Name = "menuBtnLogIn";
             this.menuBtnLogIn.Size = new System.Drawing.Size(152, 22);
             this.menuBtnLogIn.Text = "Log In..";
+            this.menuBtnLogIn.Click += new System.EventHandler(this.menuBtnLogIn_Click);
             // 
             // menuBtnLogOut
             // 
