@@ -21,6 +21,7 @@ namespace artis_lab
             InitializeComponent();
             this.type = type;
             this.controller = controller;
+            comboPriv.SelectedIndex = 0;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
