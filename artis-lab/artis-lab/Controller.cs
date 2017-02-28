@@ -24,7 +24,7 @@ namespace artis_lab
 
         private ViewLogIn viewLogin;
         private ViewUser viewUser;
-        private ViewError viewError;
+        private ViewMessage viewMessage;
         private ViewManageUsers viewManageUsers;
 
         public Controller(MainForm mainForm)
@@ -76,16 +76,16 @@ namespace artis_lab
             }
             else
             {
-                viewError = new ViewError(NOT_LOGGED_IN);
-                viewError.ShowDialog();
+                viewMessage = new ViewMessage(NOT_LOGGED_IN);
+                viewMessage.ShowDialog();
             }
         }
 
         public void saveNewUser(String username, String password, String privLevel, DateTime createdOn, String notes)
         {
             User newUser = new User(username, password, privLevel, createdOn, notes);
-            viewError = new ViewError(newUser.save(authToken));
-            viewError.ShowDialog();
+            viewMessage = new ViewMessage(newUser.save(authToken));
+            viewMessage.ShowDialog();
             viewUser.Close();
         }
 
@@ -105,8 +105,8 @@ namespace artis_lab
             }
             else
             {
-                viewError = new ViewError(NOT_LOGGED_IN);
-                viewError.ShowDialog();
+                viewMessage = new ViewMessage(NOT_LOGGED_IN);
+                viewMessage.ShowDialog();
             }
         }
 

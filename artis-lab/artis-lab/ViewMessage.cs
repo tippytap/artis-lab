@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace artis_lab
 {
-    public partial class ViewError : Form
+    public partial class ViewMessage : Form
     {
-        public ViewError(String message)
+        public ViewMessage(String message)
         {
             InitializeComponent();
             this.lblMessage.Text = message;

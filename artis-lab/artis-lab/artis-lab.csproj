@@ -49,11 +49,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="UserHash.cs" />
-    <Compile Include="ViewError.cs">
+    <Compile Include="ViewMessage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewError.Designer.cs">
-      <DependentUpon>ViewError.cs</DependentUpon>
+    <Compile Include="ViewMessage.Designer.cs">
+      <DependentUpon>ViewMessage.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewLogIn.cs">
       <SubType>Form</SubType>
@@ -102,8 +102,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ViewError.resx">
-      <DependentUpon>ViewError.cs</DependentUpon>
+    <EmbeddedResource Include="ViewMessage.resx">
+      <DependentUpon>ViewMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewLogIn.resx">
       <DependentUpon>ViewLogIn.cs</DependentUpon>

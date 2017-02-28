@@ -1,6 +1,6 @@
 ﻿namespace artis_lab
 {
-    partial class ViewError
+    partial class ViewMessage
     {
         /// <summary>
         /// Required designer variable.
