@@ -20,17 +20,18 @@ namespace artis_lab
 
         private const String NOT_LOGGED_IN = "You must be logged in to perform this action.";
 
-        private Dictionary<String, ARTISLAB.ResUser> users;
-
+        // VIEWS
         private ViewLogIn viewLogin;
         private ViewUser viewUser;
         private ViewMessage viewMessage;
         private ViewManageUsers viewManageUsers;
+        //
 
         public Controller(MainForm mainForm)
         {
             this.mainForm = mainForm;
             loggedIn = false;
+            authToken = "";
         }
 
         public void logIn()
@@ -52,6 +53,11 @@ namespace artis_lab
             {
                 viewLogin.lblError.Text = authToken;
             }
+        }
+
+        public String getAuthToken()
+        {
+            return authToken;
         }
 
         public void logOut()
@@ -98,9 +104,8 @@ namespace artis_lab
         {
             if (isLoggedIn())
             {
-                Thread t = new Thread(new ThreadStart(loadUsers));
-                t.Start();
-                viewManageUsers = new ViewManageUsers();
+                System.Data.DataTable users = User.getAllUsers();
+                viewManageUsers = new ViewManageUsers(this, users);
                 viewManageUsers.Show();
             }
             else
@@ -110,20 +115,5 @@ namespace artis_lab
             }
         }
 
-        private void loadUsers()
-        {
-            List<ARTISLAB.ResUser> usersList = new List<ARTISLAB.ResUser>();
-            System.Data.DataTable usersTable = User.getAllUsers();
-            for(int i = 0; i < usersTable.Rows.Count; i++)
-            {
-                String username = usersTable.Rows[i]["USERNAME"].ToString();
-                usersList.Add(User.find(username, authToken));
-            }
-            users = usersList.ToDictionary(u => u.Username);
-            if (viewManageUsers.Visible)
-            {
-                //viewManageUsers.listviewUsers.Items.AddRange(usersList.ToArray());
-            }
-        }
     }
 }
