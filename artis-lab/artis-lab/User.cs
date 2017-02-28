@@ -7,14 +7,61 @@ using System.Diagnostics;
 
 namespace artis_lab
 {
-    class User : Updatable
+    public class User : Updatable
     {
 
-        ARTISLAB.ResUser user;
+        private String username;
+        private String password;
+        private String privLevel;
+        private String notes;
 
-        public void save()
+        private DateTime createdOn;
+
+        public User(String username, String password, String privLevel, DateTime createdOn, String notes)
         {
-            throw new NotImplementedException();
+            this.username = username;
+            this.password = password;
+            this.privLevel = privLevel;
+            this.createdOn = createdOn;
+            this.notes = notes;   
+        }
+
+        public String save(String authToken)
+        {
+            ARTISLAB.ResUser user = new ARTISLAB.ResUser();
+            String result = "";
+            if (username != "" && password != "" && privLevel != "")
+            {
+                user.Username = username;
+                user.Password = password;
+                user.PrivLevel = privLevel;
+                user.Notes = notes;
+                result = Program.ARTISClient.insertResUser(user, authToken);
+            }
+            else
+            {
+                result = "Unable to save user.";
+            }
+            return result;
+        }
+
+        public String update(String authToken)
+        {
+            ARTISLAB.ResUser user = new ARTISLAB.ResUser();
+            if (username != "")
+                user.Username = username;
+            if (password != "")
+                user.Password = password;
+            if (user.PrivLevel != "")
+                user.PrivLevel = privLevel;
+            if (user.Notes != "")
+                user.Notes = notes;
+            return Program.ARTISClient.saveResUser(user, authToken);
+        }
+
+        public string delete(String username, String authToken)
+        {
+            return Program.ARTISClient.deleteResUser(username, authToken);
         }
 
         public static String authenticate(String username, String password)
@@ -37,5 +84,6 @@ namespace artis_lab
         {
             return Program.ARTISClient.getResUsers();
         }
+
     }
 }

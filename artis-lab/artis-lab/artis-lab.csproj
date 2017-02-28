@@ -78,6 +78,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Updatable.cs" />
+    <Compile Include="ViewManageUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewManageUsers.Designer.cs">
+      <DependentUpon>ViewManageUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewLogIn.resx">
       <DependentUpon>ViewLogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewManageUsers.resx">
+      <DependentUpon>ViewManageUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewUser.resx">
       <DependentUpon>ViewUser.cs</DependentUpon>

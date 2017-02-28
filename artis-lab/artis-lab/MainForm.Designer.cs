@@ -93,14 +93,14 @@
             // menuBtnLogIn
             // 
             this.menuBtnLogIn.Name = "menuBtnLogIn";
-            this.menuBtnLogIn.Size = new System.Drawing.Size(152, 22);
+            this.menuBtnLogIn.Size = new System.Drawing.Size(117, 22);
             this.menuBtnLogIn.Text = "Log In...";
             this.menuBtnLogIn.Click += new System.EventHandler(this.menuBtnLogIn_Click);
             // 
             // menuBtnLogOut
             // 
             this.menuBtnLogOut.Name = "menuBtnLogOut";
-            this.menuBtnLogOut.Size = new System.Drawing.Size(152, 22);
+            this.menuBtnLogOut.Size = new System.Drawing.Size(117, 22);
             this.menuBtnLogOut.Text = "Log Out";
             this.menuBtnLogOut.Click += new System.EventHandler(this.menuBtnLogOut_Click);
             // 

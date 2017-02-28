@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace artis_lab
 {
-    public partial class ViewError : Form
+    public partial class ViewManageUsers : Form
     {
-        public ViewError(String message)
+        public ViewManageUsers()
         {
             InitializeComponent();
-            this.lblMessage.Text = message;
-        }
-
-        private void btnGotIt_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

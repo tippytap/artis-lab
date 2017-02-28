@@ -8,6 +8,8 @@ namespace artis_lab
 {
     interface Updatable
     {
-        void save();
+        String save(String authToken);
+        String update(String authToken);
+        String delete(String key, String authToken);
     }
 }

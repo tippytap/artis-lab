@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
 using System.Diagnostics;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace artis_lab
 {
@@ -16,9 +18,14 @@ namespace artis_lab
 
         private bool loggedIn;
 
+        private const String NOT_LOGGED_IN = "You must be logged in to perform this action.";
+
+        private Dictionary<String, ARTISLAB.ResUser> users;
+
         private ViewLogIn viewLogin;
         private ViewUser viewUser;
         private ViewError viewError;
+        private ViewManageUsers viewManageUsers;
 
         public Controller(MainForm mainForm)
         {
@@ -63,28 +70,60 @@ namespace artis_lab
         {
             if (isLoggedIn())
             {
-                viewUser = new ViewUser();
+                viewUser = new ViewUser(this, 0);
                 viewUser.Text = "New User";
                 viewUser.Show();
             }
             else
             {
-                viewError = new ViewError();
-                viewError.lblMessage.Text = "You must be logged in to perform this action.";
+                viewError = new ViewError(NOT_LOGGED_IN);
                 viewError.ShowDialog();
             }
         }
 
+        public void saveNewUser(String username, String password, String privLevel, DateTime createdOn, String notes)
+        {
+            User newUser = new User(username, password, privLevel, createdOn, notes);
+            viewError = new ViewError(newUser.save(authToken));
+            viewError.ShowDialog();
+            viewUser.Close();
+        }
+
+        public void updateUser(String username, String password, String privLevel, String notes)
+        {
+            Debug.WriteLine(username);
+        }
+
         public void manageUsers()
         {
-            Dictionary<String, ARTISLAB.ResUser> users = new Dictionary<String, ARTISLAB.ResUser>();
+            if (isLoggedIn())
+            {
+                Thread t = new Thread(new ThreadStart(loadUsers));
+                t.Start();
+                viewManageUsers = new ViewManageUsers();
+                viewManageUsers.Show();
+            }
+            else
+            {
+                viewError = new ViewError(NOT_LOGGED_IN);
+                viewError.ShowDialog();
+            }
+        }
+
+        private void loadUsers()
+        {
+            List<ARTISLAB.ResUser> usersList = new List<ARTISLAB.ResUser>();
             System.Data.DataTable usersTable = User.getAllUsers();
-            /*for(int i = 0; i < usersTable.Rows.Count; i++)
+            for(int i = 0; i < usersTable.Rows.Count; i++)
             {
                 String username = usersTable.Rows[i]["USERNAME"].ToString();
-                users.Add(username, User.find(username, authToken));
+                usersList.Add(User.find(username, authToken));
             }
-            Debug.WriteLine("done");*/
+            users = usersList.ToDictionary(u => u.Username);
+            if (viewManageUsers.Visible)
+            {
+                //viewManageUsers.listviewUsers.Items.AddRange(usersList.ToArray());
+            }
         }
     }
 }

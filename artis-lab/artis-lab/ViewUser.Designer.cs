@@ -30,10 +30,10 @@
         {
             this.lblUsername = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblPrivLevel = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboPriv = new System.Windows.Forms.ComboBox();
             this.lblCreatedOn = new System.Windows.Forms.Label();
             this.dateCreatedOn = new System.Windows.Forms.DateTimePicker();
             this.txtNotes = new System.Windows.Forms.TextBox();
@@ -60,13 +60,13 @@
             this.txtUsername.Size = new System.Drawing.Size(240, 26);
             this.txtUsername.TabIndex = 1;
             // 
-            // textBox1
+            // txtPassword
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(318, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(240, 26);
-            this.textBox1.TabIndex = 3;
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(318, 58);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(240, 26);
+            this.txtPassword.TabIndex = 3;
             // 
             // label1
             // 
@@ -88,20 +88,20 @@
             this.lblPrivLevel.TabIndex = 4;
             this.lblPrivLevel.Text = "Privelege Level";
             // 
-            // comboBox1
+            // comboPriv
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboPriv.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.comboPriv.FormattingEnabled = true;
+            this.comboPriv.Items.AddRange(new object[] {
             "Viewer",
             "Reserver",
             "Admin",
             "Sunset",
             "Special"});
-            this.comboBox1.Location = new System.Drawing.Point(37, 152);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(240, 28);
-            this.comboBox1.TabIndex = 5;
+            this.comboPriv.Location = new System.Drawing.Point(37, 152);
+            this.comboPriv.Name = "comboPriv";
+            this.comboPriv.Size = new System.Drawing.Size(240, 28);
+            this.comboPriv.TabIndex = 5;
             // 
             // lblCreatedOn
             // 
@@ -148,6 +148,7 @@
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -171,9 +172,9 @@
             this.Controls.Add(this.txtNotes);
             this.Controls.Add(this.dateCreatedOn);
             this.Controls.Add(this.lblCreatedOn);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboPriv);
             this.Controls.Add(this.lblPrivLevel);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.lblUsername);
@@ -194,8 +195,8 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         public System.Windows.Forms.TextBox txtUsername;
-        public System.Windows.Forms.TextBox textBox1;
-        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.TextBox txtPassword;
+        public System.Windows.Forms.ComboBox comboPriv;
         public System.Windows.Forms.DateTimePicker dateCreatedOn;
         public System.Windows.Forms.TextBox txtNotes;
     }
