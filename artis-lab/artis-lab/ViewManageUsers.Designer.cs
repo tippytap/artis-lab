@@ -31,31 +31,26 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.comboSearchMethod = new System.Windows.Forms.ComboBox();
-            this.listviewUsers = new System.Windows.Forms.ListView();
-            this.Select = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Username = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Privelege = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Created = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Notes = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnEditSelected = new System.Windows.Forms.Button();
             this.btnAddUser = new System.Windows.Forms.Button();
             this.btnDeleteSelected = new System.Windows.Forms.Button();
+            this.listboxUsers = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(214, 45);
+            this.textBox1.Location = new System.Drawing.Point(187, 46);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(533, 30);
+            this.textBox1.Size = new System.Drawing.Size(263, 30);
             this.textBox1.TabIndex = 0;
             // 
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(754, 45);
+            this.btnSearch.Location = new System.Drawing.Point(456, 45);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(119, 30);
+            this.btnSearch.Size = new System.Drawing.Size(119, 31);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -69,28 +64,13 @@
             "Note"});
             this.comboSearchMethod.Location = new System.Drawing.Point(51, 45);
             this.comboSearchMethod.Name = "comboSearchMethod";
-            this.comboSearchMethod.Size = new System.Drawing.Size(157, 30);
+            this.comboSearchMethod.Size = new System.Drawing.Size(130, 30);
             this.comboSearchMethod.TabIndex = 2;
-            // 
-            // listviewUsers
-            // 
-            this.listviewUsers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Select,
-            this.Username,
-            this.Privelege,
-            this.Created,
-            this.Notes});
-            this.listviewUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.listviewUsers.Location = new System.Drawing.Point(51, 81);
-            this.listviewUsers.Name = "listviewUsers";
-            this.listviewUsers.Size = new System.Drawing.Size(822, 338);
-            this.listviewUsers.TabIndex = 3;
-            this.listviewUsers.UseCompatibleStateImageBehavior = false;
             // 
             // btnEditSelected
             // 
             this.btnEditSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnEditSelected.Location = new System.Drawing.Point(701, 425);
+            this.btnEditSelected.Location = new System.Drawing.Point(404, 421);
             this.btnEditSelected.Name = "btnEditSelected";
             this.btnEditSelected.Size = new System.Drawing.Size(171, 45);
             this.btnEditSelected.TabIndex = 4;
@@ -100,7 +80,7 @@
             // btnAddUser
             // 
             this.btnAddUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnAddUser.Location = new System.Drawing.Point(524, 425);
+            this.btnAddUser.Location = new System.Drawing.Point(227, 421);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(171, 45);
             this.btnAddUser.TabIndex = 5;
@@ -111,22 +91,33 @@
             // btnDeleteSelected
             // 
             this.btnDeleteSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnDeleteSelected.Location = new System.Drawing.Point(347, 425);
+            this.btnDeleteSelected.Location = new System.Drawing.Point(50, 421);
             this.btnDeleteSelected.Name = "btnDeleteSelected";
             this.btnDeleteSelected.Size = new System.Drawing.Size(171, 45);
             this.btnDeleteSelected.TabIndex = 6;
             this.btnDeleteSelected.Text = "Delete Selected";
             this.btnDeleteSelected.UseVisualStyleBackColor = true;
             // 
+            // listboxUsers
+            // 
+            this.listboxUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.listboxUsers.FormattingEnabled = true;
+            this.listboxUsers.ItemHeight = 20;
+            this.listboxUsers.Location = new System.Drawing.Point(51, 82);
+            this.listboxUsers.Name = "listboxUsers";
+            this.listboxUsers.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.listboxUsers.Size = new System.Drawing.Size(524, 324);
+            this.listboxUsers.TabIndex = 7;
+            // 
             // ViewManageUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(926, 528);
+            this.ClientSize = new System.Drawing.Size(633, 528);
+            this.Controls.Add(this.listboxUsers);
             this.Controls.Add(this.btnDeleteSelected);
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.btnEditSelected);
-            this.Controls.Add(this.listviewUsers);
             this.Controls.Add(this.comboSearchMethod);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.textBox1);
@@ -142,14 +133,9 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.ComboBox comboSearchMethod;
-        private System.Windows.Forms.ColumnHeader Select;
-        private System.Windows.Forms.ColumnHeader Username;
-        private System.Windows.Forms.ColumnHeader Privelege;
-        private System.Windows.Forms.ColumnHeader Created;
-        private System.Windows.Forms.ColumnHeader Notes;
-        public System.Windows.Forms.ListView listviewUsers;
         private System.Windows.Forms.Button btnEditSelected;
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.Button btnDeleteSelected;
+        private System.Windows.Forms.ListBox listboxUsers;
     }
 }

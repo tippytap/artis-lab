@@ -102,17 +102,17 @@ namespace artis_lab
 
         public void manageUsers()
         {
-            if (isLoggedIn())
-            {
+            /*if (isLoggedIn())
+            {*/
                 System.Data.DataTable users = User.getAllUsers();
                 viewManageUsers = new ViewManageUsers(this, users);
                 viewManageUsers.Show();
-            }
+            /*}
             else
             {
                 viewMessage = new ViewMessage(NOT_LOGGED_IN);
                 viewMessage.ShowDialog();
-            }
+            }*/
         }
 
     }

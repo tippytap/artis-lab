@@ -27,12 +27,7 @@ namespace artis_lab
         {
             foreach(DataRow row in users.Rows)
             {
-                ListViewItem item = new ListViewItem(row[0].ToString());
-                for(int i = 1; i < users.Columns.Count; i++)
-                {
-                    item.SubItems.Add(row[i].ToString());
-                }
-                listviewUsers.Items.Add(item);
+                listboxUsers.Items.Add(row[0].ToString());
             }
         }
 
