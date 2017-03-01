@@ -121,6 +121,7 @@
             this.Controls.Add(this.menuTopMenu);
             this.MainMenuStrip = this.menuTopMenu;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ARTIS Lab Admin";
             this.menuTopMenu.ResumeLayout(false);
             this.menuTopMenu.PerformLayout();

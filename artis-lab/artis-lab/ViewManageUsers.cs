@@ -41,7 +41,8 @@ namespace artis_lab
         private void btnEditSelected_Click(object sender, EventArgs e)
         {
             if(listboxUsers.SelectedIndex != -1)
-                controller.showUser(listboxUsers.SelectedItem.ToString());
+                foreach(Object user in listboxUsers.SelectedItems)
+                    controller.showUser(user.ToString());
         }
     }
 }
