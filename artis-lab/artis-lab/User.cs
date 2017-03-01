@@ -59,6 +59,31 @@ namespace artis_lab
             return Program.ARTISClient.saveResUser(user, authToken);
         }
 
+        public String getUsername()
+        {
+            return username;
+        }
+
+        public String getPassword()
+        {
+            return password;
+        }
+
+        public String getNotes()
+        {
+            return notes;
+        }
+
+        public String getPrivLevel()
+        {
+            return privLevel;
+        }
+
+        public DateTime getCreateDate()
+        {
+            return createdOn;
+        }
+
         public string delete(String username, String authToken)
         {
             return Program.ARTISClient.deleteResUser(username, authToken);
@@ -74,10 +99,10 @@ namespace artis_lab
             return Program.ARTISClient.logOut(authToken);
         }
 
-        public static ARTISLAB.ResUser find(String username, String token)
+        public static User find(String username, String token)
         {
             ARTISLAB.ResUser foundUser = Program.ARTISClient.getResUser(username, token);
-            return foundUser;
+            return new User(foundUser.Username, foundUser.Password, foundUser.PrivLevel, foundUser.CreateDate, foundUser.Notes);
         }
 
         public static System.Data.DataTable getAllUsers()
@@ -85,5 +110,10 @@ namespace artis_lab
             return Program.ARTISClient.getResUsers();
         }
 
+
+        public override String ToString()
+        {
+            return "Username: " + username + "\n" + password + "\n" + privLevel + "\n" + createdOn + "\n" + notes + "\n";
+        }
     }
 }

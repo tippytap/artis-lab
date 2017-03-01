@@ -20,7 +20,7 @@ namespace artis_lab
 
         private const String NOT_LOGGED_IN = "You must be logged in to perform this action.";
 
-        // VIEWS
+        // VIEWS : Windows
         private ViewLogIn viewLogin;
         private ViewUser viewUser;
         private ViewMessage viewMessage;
@@ -100,19 +100,26 @@ namespace artis_lab
             Debug.WriteLine(username);
         }
 
+        public void showUser(String username)
+        {
+            User user = User.find(username, authToken);
+            viewUser = new ViewUser(this, 1, user);
+            viewUser.Show();
+        }
+
         public void manageUsers()
         {
-            /*if (isLoggedIn())
-            {*/
+            if (isLoggedIn())
+            {
                 System.Data.DataTable users = User.getAllUsers();
                 viewManageUsers = new ViewManageUsers(this, users);
                 viewManageUsers.Show();
-            /*}
+            }
             else
             {
                 viewMessage = new ViewMessage(NOT_LOGGED_IN);
                 viewMessage.ShowDialog();
-            }*/
+            }
         }
 
     }

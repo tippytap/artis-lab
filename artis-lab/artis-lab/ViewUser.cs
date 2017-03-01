@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace artis_lab
 {
@@ -22,6 +23,30 @@ namespace artis_lab
             this.type = type;
             this.controller = controller;
             comboPriv.SelectedIndex = 0;
+        }
+
+        public ViewUser(Controller controller, int type, User user)
+        {
+            InitializeComponent();
+            this.type = type;
+            this.controller = controller;
+            setDefaultValues(user);
+            txtPassword.Enabled = false;
+            this.Text = user.getUsername();
+        }
+
+        private void setDefaultValues(User user)
+        {
+            txtUsername.Text = user.getUsername();
+            txtNotes.Text = user.getNotes();
+            dateCreatedOn.Text = user.getCreateDate().ToString();
+            for(int i = 0; i < comboPriv.Items.Count; i++)
+            {
+                if(comboPriv.Items[i].ToString() == user.getPrivLevel())
+                {
+                    comboPriv.SelectedIndex = i;
+                }
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

@@ -35,12 +35,13 @@
             this.btnAddUser = new System.Windows.Forms.Button();
             this.btnDeleteSelected = new System.Windows.Forms.Button();
             this.listboxUsers = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(187, 46);
+            this.textBox1.Location = new System.Drawing.Point(236, 46);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(263, 30);
             this.textBox1.TabIndex = 0;
@@ -48,9 +49,9 @@
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(456, 45);
+            this.btnSearch.Location = new System.Drawing.Point(505, 45);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(119, 31);
+            this.btnSearch.Size = new System.Drawing.Size(70, 31);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -60,11 +61,11 @@
             this.comboSearchMethod.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.comboSearchMethod.FormattingEnabled = true;
             this.comboSearchMethod.Items.AddRange(new object[] {
-            "Username",
-            "Note"});
+            "Username contains",
+            "Note contains"});
             this.comboSearchMethod.Location = new System.Drawing.Point(51, 45);
             this.comboSearchMethod.Name = "comboSearchMethod";
-            this.comboSearchMethod.Size = new System.Drawing.Size(130, 30);
+            this.comboSearchMethod.Size = new System.Drawing.Size(179, 30);
             this.comboSearchMethod.TabIndex = 2;
             // 
             // btnEditSelected
@@ -76,6 +77,7 @@
             this.btnEditSelected.TabIndex = 4;
             this.btnEditSelected.Text = "Edit Selected...";
             this.btnEditSelected.UseVisualStyleBackColor = true;
+            this.btnEditSelected.Click += new System.EventHandler(this.btnEditSelected_Click);
             // 
             // btnAddUser
             // 
@@ -105,15 +107,27 @@
             this.listboxUsers.ItemHeight = 20;
             this.listboxUsers.Location = new System.Drawing.Point(51, 82);
             this.listboxUsers.Name = "listboxUsers";
-            this.listboxUsers.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.listboxUsers.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.listboxUsers.Size = new System.Drawing.Size(524, 324);
+            this.listboxUsers.Sorted = true;
             this.listboxUsers.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(47, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 20);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Find a user";
             // 
             // ViewManageUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 528);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.listboxUsers);
             this.Controls.Add(this.btnDeleteSelected);
             this.Controls.Add(this.btnAddUser);
@@ -122,6 +136,7 @@
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.textBox1);
             this.Name = "ViewManageUsers";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Users";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -137,5 +152,6 @@
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.Button btnDeleteSelected;
         private System.Windows.Forms.ListBox listboxUsers;
+        private System.Windows.Forms.Label label1;
     }
 }

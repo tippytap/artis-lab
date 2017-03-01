@@ -11,7 +11,7 @@ namespace artis_lab
 {
     public class UserDictionary
     {
-        private Dictionary<String, ARTISLAB.ResUser> users;
+        /*private Dictionary<String, ARTISLAB.ResUser> users;
 
         private Controller controller;
         
@@ -32,7 +32,7 @@ namespace artis_lab
                 usersList.Add(User.find(username, controller.getAuthToken()));
             }
             users = usersList.ToDictionary(u => u.Username);
-        }
+        }*/
 
     }
 }

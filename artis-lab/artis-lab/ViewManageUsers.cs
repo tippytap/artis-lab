@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace artis_lab
 {
@@ -25,15 +26,22 @@ namespace artis_lab
 
         private void loadUsers()
         {
-            foreach(DataRow row in users.Rows)
+            foreach (DataRow row in users.Rows)
             {
                 listboxUsers.Items.Add(row[0].ToString());
             }
+            Debug.WriteLine(listboxUsers.SelectedIndex);
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             controller.newUser();
+        }
+
+        private void btnEditSelected_Click(object sender, EventArgs e)
+        {
+            if(listboxUsers.SelectedIndex != -1)
+                controller.showUser(listboxUsers.SelectedItem.ToString());
         }
     }
 }
