@@ -97,7 +97,14 @@ namespace artis_lab
 
         public void updateUser(String username, String password, String privLevel, String notes)
         {
-            Debug.WriteLine(username);
+            Dictionary<String, String> newValues = new Dictionary<String, String>();
+            newValues.Add("username", username);
+            newValues.Add("privLevel", privLevel);
+            newValues.Add("notes", notes);
+            User user = User.find(username, authToken);
+            viewMessage = new ViewMessage(user.update(newValues, authToken));
+            viewMessage.ShowDialog();
+            viewUser.Close();
         }
 
         public void showUser(String username)

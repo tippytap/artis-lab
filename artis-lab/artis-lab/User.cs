@@ -45,18 +45,21 @@ namespace artis_lab
             return result;
         }
 
-        public String update(String authToken)
+        public String update(Dictionary<String, String> newValues, String authToken)
         {
-            ARTISLAB.ResUser user = new ARTISLAB.ResUser();
+            /*ARTISLAB.ResUser userToUpdate = new ARTISLAB.ResUser();
+            String notes;
+            String username;
+            newValues.TryGetValue("username", out username);
+            newValues.TryGetValue("notes", out notes);
+            if (notes != "")
+                userToUpdate.Notes = notes;
             if (username != "")
-                user.Username = username;
-            if (password != "")
-                user.Password = password;
-            if (user.PrivLevel != "")
-                user.PrivLevel = privLevel;
-            if (user.Notes != "")
-                user.Notes = notes;
-            return Program.ARTISClient.saveResUser(user, authToken);
+                userToUpdate.Username = username;*/
+            /*if (privLevel != "")
+                userToUpdate.PrivLevel = privLevel;*/
+            //return Program.ARTISClient.saveResUser(userToUpdate, authToken);
+            return "";
         }
 
         public String getUsername()

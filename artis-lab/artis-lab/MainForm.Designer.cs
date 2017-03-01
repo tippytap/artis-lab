@@ -58,20 +58,23 @@
             this.menuBtnAddNewUser,
             this.menuBtnSeeTopUsers});
             this.menuUsers.Name = "menuUsers";
+            this.menuUsers.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.U)));
             this.menuUsers.Size = new System.Drawing.Size(47, 20);
             this.menuUsers.Text = "Users";
             // 
             // menuBtnManageUsers
             // 
             this.menuBtnManageUsers.Name = "menuBtnManageUsers";
-            this.menuBtnManageUsers.Size = new System.Drawing.Size(158, 22);
+            this.menuBtnManageUsers.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.M)));
+            this.menuBtnManageUsers.Size = new System.Drawing.Size(198, 22);
             this.menuBtnManageUsers.Text = "Manage Users...";
             this.menuBtnManageUsers.Click += new System.EventHandler(this.menuBtnManageUsers_Click);
             // 
             // menuBtnAddNewUser
             // 
             this.menuBtnAddNewUser.Name = "menuBtnAddNewUser";
-            this.menuBtnAddNewUser.Size = new System.Drawing.Size(158, 22);
+            this.menuBtnAddNewUser.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.N)));
+            this.menuBtnAddNewUser.Size = new System.Drawing.Size(198, 22);
             this.menuBtnAddNewUser.Text = "Add New User...";
             this.menuBtnAddNewUser.Click += new System.EventHandler(this.menuBtnAddNewUser_Click);
             // 
@@ -87,20 +90,22 @@
             this.menuBtnLogIn,
             this.menuBtnLogOut});
             this.menuMyAccount.Name = "menuMyAccount";
+            this.menuMyAccount.ShortcutKeyDisplayString = "";
+            this.menuMyAccount.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.A)));
             this.menuMyAccount.Size = new System.Drawing.Size(84, 20);
             this.menuMyAccount.Text = "My Account";
             // 
             // menuBtnLogIn
             // 
             this.menuBtnLogIn.Name = "menuBtnLogIn";
-            this.menuBtnLogIn.Size = new System.Drawing.Size(117, 22);
+            this.menuBtnLogIn.Size = new System.Drawing.Size(152, 22);
             this.menuBtnLogIn.Text = "Log In...";
             this.menuBtnLogIn.Click += new System.EventHandler(this.menuBtnLogIn_Click);
             // 
             // menuBtnLogOut
             // 
             this.menuBtnLogOut.Name = "menuBtnLogOut";
-            this.menuBtnLogOut.Size = new System.Drawing.Size(117, 22);
+            this.menuBtnLogOut.Size = new System.Drawing.Size(152, 22);
             this.menuBtnLogOut.Text = "Log Out";
             this.menuBtnLogOut.Click += new System.EventHandler(this.menuBtnLogOut_Click);
             // 

@@ -30,7 +30,6 @@ namespace artis_lab
             {
                 listboxUsers.Items.Add(row[0].ToString());
             }
-            Debug.WriteLine(listboxUsers.SelectedIndex);
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
