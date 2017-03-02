@@ -120,6 +120,11 @@ namespace artis_lab
             }
         }
 
+        public System.Data.DataTable updateUserList()
+        {
+            return User.getAllUsers();
+        }
+
         public void showUser(String username)
         {
             User user = User.find(username, authToken);

@@ -26,15 +26,21 @@ namespace artis_lab
 
         private void loadUsers()
         {
-            foreach (DataRow row in users.Rows)
-            {
-                listboxUsers.Items.Add(row[0].ToString());
-            }
+            listboxUsers.DataSource = users;
+            listboxUsers.DisplayMember = "Username";
+            listboxUsers.ValueMember = "Username";
+        }
+
+        private void refreshUsers()
+        {
+            users = controller.updateUserList();
+            loadUsers();
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             controller.newUser();
+            refreshUsers();
         }
 
         private void btnEditSelected_Click(object sender, EventArgs e)
