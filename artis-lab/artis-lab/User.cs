@@ -114,6 +114,11 @@ namespace artis_lab
             return Program.ARTISClient.getResUsers();
         }
 
+        public static System.Data.DataTable getAllUserData()
+        {
+            return Program.ARTISClient.getAllUserData();
+        }
+
         public override String ToString()
         {
             return "Username: " + username + "\n" + password + "\n" + privLevel + "\n" + createdOn + "\n" + notes + "\n";

@@ -139,7 +139,7 @@ namespace artis_lab
         {
             if (isLoggedIn())
             {
-                System.Data.DataTable users = User.getAllUsers();
+                System.Data.DataTable users = User.getAllUserData();
                 viewManageUsers = new ViewManageUsers(this, users);
                 viewManageUsers.Show();
             }
