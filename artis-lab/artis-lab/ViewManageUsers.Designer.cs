@@ -34,8 +34,9 @@
             this.btnEditSelected = new System.Windows.Forms.Button();
             this.btnAddUser = new System.Windows.Forms.Button();
             this.btnDeleteSelected = new System.Windows.Forms.Button();
-            this.listboxUsers = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.dataGridUsers = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -101,18 +102,6 @@
             this.btnDeleteSelected.UseVisualStyleBackColor = true;
             this.btnDeleteSelected.Click += new System.EventHandler(this.btnDeleteSelected_Click);
             // 
-            // listboxUsers
-            // 
-            this.listboxUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.listboxUsers.FormattingEnabled = true;
-            this.listboxUsers.ItemHeight = 20;
-            this.listboxUsers.Location = new System.Drawing.Point(51, 82);
-            this.listboxUsers.Name = "listboxUsers";
-            this.listboxUsers.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listboxUsers.Size = new System.Drawing.Size(524, 324);
-            this.listboxUsers.Sorted = true;
-            this.listboxUsers.TabIndex = 7;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -123,13 +112,23 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Find a user";
             // 
+            // dataGridUsers
+            // 
+            this.dataGridUsers.AllowUserToAddRows = false;
+            this.dataGridUsers.AllowUserToDeleteRows = false;
+            this.dataGridUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridUsers.Location = new System.Drawing.Point(51, 82);
+            this.dataGridUsers.Name = "dataGridUsers";
+            this.dataGridUsers.Size = new System.Drawing.Size(524, 333);
+            this.dataGridUsers.TabIndex = 9;
+            // 
             // ViewManageUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 528);
+            this.Controls.Add(this.dataGridUsers);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listboxUsers);
             this.Controls.Add(this.btnDeleteSelected);
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.btnEditSelected);
@@ -139,6 +138,7 @@
             this.Name = "ViewManageUsers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Users";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,7 +152,7 @@
         private System.Windows.Forms.Button btnEditSelected;
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.Button btnDeleteSelected;
-        private System.Windows.Forms.ListBox listboxUsers;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridUsers;
     }
 }

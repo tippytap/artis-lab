@@ -26,10 +26,8 @@ namespace artis_lab
 
         private void loadUsers()
         {
-            listboxUsers.DataSource = null;
-            listboxUsers.DataSource = users;
-            listboxUsers.DisplayMember = "Username";
-            listboxUsers.ValueMember = "Username";
+            dataGridUsers.DataSource = null;
+            dataGridUsers.DataSource = users;
         }
 
         private void refreshUsers()
@@ -41,21 +39,22 @@ namespace artis_lab
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             controller.newUser();
-            refreshUsers();
         }
 
         private void btnEditSelected_Click(object sender, EventArgs e)
         {
-            if(listboxUsers.SelectedIndex != -1)
-                foreach(DataRowView row in listboxUsers.SelectedItems)
-                    controller.showUser(row[0].ToString());
+            foreach(DataGridViewRow row in dataGridUsers.SelectedRows)
+            {
+                controller.showUser(row.Cells[0].Value.ToString());
+            }
         }
 
         private void btnDeleteSelected_Click(object sender, EventArgs e)
         {
-            if (listboxUsers.SelectedIndex != -1)
-                foreach (DataRowView row in listboxUsers.SelectedItems)
-                    controller.deleteUser(row[0].ToString());
+            foreach(DataGridViewRow row in dataGridUsers.SelectedRows)
+            {
+                controller.deleteUser(row.Cells[0].Value.ToString());
+            }
         }
     }
 }
