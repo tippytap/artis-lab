@@ -36,6 +36,7 @@ namespace artis_lab
                 user.Password = password;
                 user.PrivLevel = privLevel;
                 user.Notes = notes;
+                user.CreateDate = createdOn;
                 result = Program.ARTISClient.insertResUser(user, authToken);
             }
             else
@@ -60,6 +61,11 @@ namespace artis_lab
                 userToUpdate.PrivLevel = privLevel;*/
             //return Program.ARTISClient.saveResUser(userToUpdate, authToken);
             return "";
+        }
+
+        public string delete(String username, String authToken)
+        {
+            return Program.ARTISClient.deleteResUser(username, authToken);
         }
 
         public String getUsername()
@@ -87,11 +93,6 @@ namespace artis_lab
             return createdOn;
         }
 
-        public string delete(String username, String authToken)
-        {
-            return Program.ARTISClient.deleteResUser(username, authToken);
-        }
-
         public static String authenticate(String username, String password)
         {
             return Program.ARTISClient.logIn(username, password);
@@ -112,7 +113,6 @@ namespace artis_lab
         {
             return Program.ARTISClient.getResUsers();
         }
-
 
         public override String ToString()
         {
