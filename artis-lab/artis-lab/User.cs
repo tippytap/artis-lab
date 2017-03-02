@@ -63,7 +63,7 @@ namespace artis_lab
             return "";
         }
 
-        public string delete(String username, String authToken)
+        public string delete(String authToken)
         {
             return Program.ARTISClient.deleteResUser(username, authToken);
         }

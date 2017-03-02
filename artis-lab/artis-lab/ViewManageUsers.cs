@@ -43,5 +43,12 @@ namespace artis_lab
                 foreach(Object user in listboxUsers.SelectedItems)
                     controller.showUser(user.ToString());
         }
+
+        private void btnDeleteSelected_Click(object sender, EventArgs e)
+        {
+            if (listboxUsers.SelectedIndex != -1)
+                foreach (Object user in listboxUsers.SelectedItems)
+                    controller.deleteUser(user.ToString());
+        }
     }
 }

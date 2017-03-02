@@ -49,6 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="UserDictionary.cs" />
+    <Compile Include="ViewConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewConfirm.Designer.cs">
+      <DependentUpon>ViewConfirm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewMessage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ViewConfirm.resx">
+      <DependentUpon>ViewConfirm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewMessage.resx">
       <DependentUpon>ViewMessage.cs</DependentUpon>
     </EmbeddedResource>

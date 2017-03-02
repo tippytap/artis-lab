@@ -11,6 +11,6 @@ namespace artis_lab
     {
         String save(String authToken);
         String update(Dictionary<String, String> newValues, String authToken);
-        String delete(String key, String authToken);
+        String delete(String authToken);
     }
 }

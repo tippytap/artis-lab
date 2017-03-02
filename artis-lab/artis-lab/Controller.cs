@@ -25,6 +25,7 @@ namespace artis_lab
         private ViewUser viewUser;
         private ViewMessage viewMessage;
         private ViewManageUsers viewManageUsers;
+        private ViewConfirm viewConfirm;
         //
 
         public Controller(MainForm mainForm)
@@ -105,6 +106,18 @@ namespace artis_lab
             viewMessage = new ViewMessage(user.update(newValues, authToken));
             viewMessage.ShowDialog();
             viewUser.Close();
+        }
+
+        public void deleteUser(String username)
+        {
+            viewConfirm = new ViewConfirm("Are you sure? This action cannot be undone.");
+            viewConfirm.ShowDialog();
+            if (viewConfirm.getConfirm())
+            {
+                User user = User.find(username, authToken);
+                viewMessage = new ViewMessage(user.delete(authToken));
+                viewMessage.ShowDialog();
+            }
         }
 
         public void showUser(String username)

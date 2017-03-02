@@ -99,6 +99,7 @@
             this.btnDeleteSelected.TabIndex = 6;
             this.btnDeleteSelected.Text = "Delete Selected";
             this.btnDeleteSelected.UseVisualStyleBackColor = true;
+            this.btnDeleteSelected.Click += new System.EventHandler(this.btnDeleteSelected_Click);
             // 
             // listboxUsers
             // 
