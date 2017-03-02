@@ -273,6 +273,23 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="getAllUserData">
+        <s:complexType />
+      </s:element>
+      <s:element name="getAllUserDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllUserDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="string" nillable="true" type="s:string" />
       <s:element name="ResUser" nillable="true" type="tns:ResUser" />
       <s:element name="DataTable" nillable="true">
@@ -376,6 +393,12 @@
   <wsdl:message name="getResUsersSoapOut">
     <wsdl:part name="parameters" element="tns:getResUsersResponse" />
   </wsdl:message>
+  <wsdl:message name="getAllUserDataSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllUserData" />
+  </wsdl:message>
+  <wsdl:message name="getAllUserDataSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllUserDataResponse" />
+  </wsdl:message>
   <wsdl:message name="logInHttpGetIn">
     <wsdl:part name="strUsername" type="s:string" />
     <wsdl:part name="strPassword" type="s:string" />
@@ -445,6 +468,10 @@
   <wsdl:message name="getResUsersHttpGetOut">
     <wsdl:part name="Body" element="tns:DataTable" />
   </wsdl:message>
+  <wsdl:message name="getAllUserDataHttpGetIn" />
+  <wsdl:message name="getAllUserDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
   <wsdl:message name="logInHttpPostIn">
     <wsdl:part name="strUsername" type="s:string" />
     <wsdl:part name="strPassword" type="s:string" />
@@ -512,6 +539,10 @@
   </wsdl:message>
   <wsdl:message name="getResUsersHttpPostIn" />
   <wsdl:message name="getResUsersHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="getAllUserDataHttpPostIn" />
+  <wsdl:message name="getAllUserDataHttpPostOut">
     <wsdl:part name="Body" element="tns:DataTable" />
   </wsdl:message>
   <wsdl:portType name="ArtisLabInfoServiceSoap">
@@ -590,6 +621,11 @@
       <wsdl:input message="tns:getResUsersSoapIn" />
       <wsdl:output message="tns:getResUsersSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="getAllUserData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get a dump of all reservation users data (username, privlevel, createdate, and notes)</wsdl:documentation>
+      <wsdl:input message="tns:getAllUserDataSoapIn" />
+      <wsdl:output message="tns:getAllUserDataSoapOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ArtisLabInfoServiceHttpGet">
     <wsdl:operation name="logIn">
@@ -657,6 +693,11 @@
       <wsdl:input message="tns:getResUsersHttpGetIn" />
       <wsdl:output message="tns:getResUsersHttpGetOut" />
     </wsdl:operation>
+    <wsdl:operation name="getAllUserData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get a dump of all reservation users data (username, privlevel, createdate, and notes)</wsdl:documentation>
+      <wsdl:input message="tns:getAllUserDataHttpGetIn" />
+      <wsdl:output message="tns:getAllUserDataHttpGetOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ArtisLabInfoServiceHttpPost">
     <wsdl:operation name="logIn">
@@ -723,6 +764,11 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get a list of all reservation users (just the username)</wsdl:documentation>
       <wsdl:input message="tns:getResUsersHttpPostIn" />
       <wsdl:output message="tns:getResUsersHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllUserData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get a dump of all reservation users data (username, privlevel, createdate, and notes)</wsdl:documentation>
+      <wsdl:input message="tns:getAllUserDataHttpPostIn" />
+      <wsdl:output message="tns:getAllUserDataHttpPostOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ArtisLabInfoServiceSoap" type="tns:ArtisLabInfoServiceSoap">
@@ -855,6 +901,15 @@
     </wsdl:operation>
     <wsdl:operation name="getResUsers">
       <soap:operation soapAction="http://www.radford.edu/ArtisLab/getResUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllUserData">
+      <soap:operation soapAction="http://www.radford.edu/ArtisLab/getAllUserData" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1000,6 +1055,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getAllUserData">
+      <soap12:operation soapAction="http://www.radford.edu/ArtisLab/getAllUserData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ArtisLabInfoServiceHttpGet" type="tns:ArtisLabInfoServiceHttpGet">
     <http:binding verb="GET" />
@@ -1120,6 +1184,15 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getAllUserData">
+      <http:operation location="/getAllUserData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ArtisLabInfoServiceHttpPost" type="tns:ArtisLabInfoServiceHttpPost">
     <http:binding verb="POST" />
@@ -1233,6 +1306,15 @@
     </wsdl:operation>
     <wsdl:operation name="getResUsers">
       <http:operation location="/getResUsers" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllUserData">
+      <http:operation location="/getAllUserData" />
       <wsdl:input>
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>

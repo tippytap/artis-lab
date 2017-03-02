@@ -36,7 +36,6 @@
             this.menuMyAccount = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBtnLogIn = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBtnLogOut = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblToken = new System.Windows.Forms.Label();
             this.menuTopMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,7 +80,7 @@
             // menuBtnSeeTopUsers
             // 
             this.menuBtnSeeTopUsers.Name = "menuBtnSeeTopUsers";
-            this.menuBtnSeeTopUsers.Size = new System.Drawing.Size(158, 22);
+            this.menuBtnSeeTopUsers.Size = new System.Drawing.Size(198, 22);
             this.menuBtnSeeTopUsers.Text = "See Top Users";
             // 
             // menuMyAccount
@@ -98,31 +97,22 @@
             // menuBtnLogIn
             // 
             this.menuBtnLogIn.Name = "menuBtnLogIn";
-            this.menuBtnLogIn.Size = new System.Drawing.Size(152, 22);
+            this.menuBtnLogIn.Size = new System.Drawing.Size(117, 22);
             this.menuBtnLogIn.Text = "Log In...";
             this.menuBtnLogIn.Click += new System.EventHandler(this.menuBtnLogIn_Click);
             // 
             // menuBtnLogOut
             // 
             this.menuBtnLogOut.Name = "menuBtnLogOut";
-            this.menuBtnLogOut.Size = new System.Drawing.Size(152, 22);
+            this.menuBtnLogOut.Size = new System.Drawing.Size(117, 22);
             this.menuBtnLogOut.Text = "Log Out";
             this.menuBtnLogOut.Click += new System.EventHandler(this.menuBtnLogOut_Click);
-            // 
-            // lblToken
-            // 
-            this.lblToken.AutoSize = true;
-            this.lblToken.Location = new System.Drawing.Point(344, 210);
-            this.lblToken.Name = "lblToken";
-            this.lblToken.Size = new System.Drawing.Size(0, 13);
-            this.lblToken.TabIndex = 1;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 729);
-            this.Controls.Add(this.lblToken);
             this.Controls.Add(this.menuTopMenu);
             this.MainMenuStrip = this.menuTopMenu;
             this.Name = "MainForm";
@@ -144,7 +134,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuBtnSeeTopUsers;
         private System.Windows.Forms.ToolStripMenuItem menuMyAccount;
         private System.Windows.Forms.ToolStripMenuItem menuBtnLogOut;
-        public System.Windows.Forms.Label lblToken;
         public System.Windows.Forms.ToolStripMenuItem menuBtnLogIn;
     }
 }

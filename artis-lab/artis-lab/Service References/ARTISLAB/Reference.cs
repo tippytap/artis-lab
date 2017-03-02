@@ -120,6 +120,13 @@ namespace artis_lab.ARTISLAB {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.radford.edu/ArtisLab/getResUsers", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataTable> getResUsersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.radford.edu/ArtisLab/getAllUserData", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataTable getAllUserData();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.radford.edu/ArtisLab/getAllUserData", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataTable> getAllUserDataAsync();
     }
     
     /// <remarks/>
@@ -383,6 +390,14 @@ namespace artis_lab.ARTISLAB {
         
         public System.Threading.Tasks.Task<System.Data.DataTable> getResUsersAsync() {
             return base.Channel.getResUsersAsync();
+        }
+        
+        public System.Data.DataTable getAllUserData() {
+            return base.Channel.getAllUserData();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> getAllUserDataAsync() {
+            return base.Channel.getAllUserDataAsync();
         }
     }
 }

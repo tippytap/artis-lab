@@ -39,14 +39,16 @@ namespace artis_lab
         {
             txtUsername.Text = user.getUsername();
             txtNotes.Text = user.getNotes();
-            dateCreatedOn.Text = user.getCreateDate().ToString();
-            for(int i = 0; i < comboPriv.Items.Count; i++)
+            Debug.WriteLine(user.getUsername());
+            Debug.WriteLine(user.getNotes());
+            //dateCreatedOn.Text = user.getCreateDate().ToString();
+            /*for(int i = 0; i < comboPriv.Items.Count; i++)
             {
                 if(comboPriv.Items[i].ToString() == user.getPrivLevel())
                 {
                     comboPriv.SelectedIndex = i;
                 }
-            }
+            }*/
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

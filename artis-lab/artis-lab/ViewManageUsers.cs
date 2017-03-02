@@ -53,9 +53,9 @@ namespace artis_lab
 
         private void btnDeleteSelected_Click(object sender, EventArgs e)
         {
-            if (listboxUsers.SelectedIndex != -1)
+            /*if (listboxUsers.SelectedIndex != -1)
                 foreach (DataRowView row in listboxUsers.SelectedItems)
-                    controller.deleteUser(row[0].ToString());
+                    controller.deleteUser(row[0].ToString());*/
         }
     }
 }
