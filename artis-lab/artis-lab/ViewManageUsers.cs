@@ -47,15 +47,15 @@ namespace artis_lab
         private void btnEditSelected_Click(object sender, EventArgs e)
         {
             if(listboxUsers.SelectedIndex != -1)
-                foreach(Object user in listboxUsers.SelectedItems)
-                    controller.showUser(user.ToString());
+                foreach(DataRowView row in listboxUsers.SelectedItems)
+                    controller.showUser(row[0].ToString());
         }
 
         private void btnDeleteSelected_Click(object sender, EventArgs e)
         {
-            /*if (listboxUsers.SelectedIndex != -1)
+            if (listboxUsers.SelectedIndex != -1)
                 foreach (DataRowView row in listboxUsers.SelectedItems)
-                    controller.deleteUser(row[0].ToString());*/
+                    controller.deleteUser(row[0].ToString());
         }
     }
 }

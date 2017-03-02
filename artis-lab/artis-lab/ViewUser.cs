@@ -41,14 +41,14 @@ namespace artis_lab
             txtNotes.Text = user.getNotes();
             Debug.WriteLine(user.getUsername());
             Debug.WriteLine(user.getNotes());
-            //dateCreatedOn.Text = user.getCreateDate().ToString();
-            /*for(int i = 0; i < comboPriv.Items.Count; i++)
+            dateCreatedOn.Text = user.getCreateDate().ToString();
+            for(int i = 0; i < comboPriv.Items.Count; i++)
             {
                 if(comboPriv.Items[i].ToString() == user.getPrivLevel())
                 {
                     comboPriv.SelectedIndex = i;
                 }
-            }*/
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace artis_lab
         private void btnSave_Click(object sender, EventArgs e)
         {
             String username = (txtUsername.Text == null) ? "" : txtUsername.Text;
-            String password = (txtPassword.Text == null) ? "" : txtPassword.Text;
+            String password = (txtPassword.Text == null) ? "" : txtPassword.Text; // this probably messed me up
             String privLevel = (comboPriv.SelectedItem == null) ? "" : comboPriv.SelectedItem.ToString();
             String notes = (txtNotes == null) ? "" : txtNotes.Text;
             switch (type)

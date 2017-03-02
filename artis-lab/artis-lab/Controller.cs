@@ -127,7 +127,10 @@ namespace artis_lab
 
         public void showUser(String username)
         {
+            Debug.WriteLine("showUser");
+            Debug.WriteLine(username);
             User user = User.find(username, authToken);
+            Debug.WriteLine(user.getUsername());
             viewUser = new ViewUser(this, 1, user);
             viewUser.Show();
         }
