@@ -26,6 +26,7 @@ namespace artis_lab
 
         private void loadUsers()
         {
+            listboxUsers.DataSource = null;
             listboxUsers.DataSource = users;
             listboxUsers.DisplayMember = "Username";
             listboxUsers.ValueMember = "Username";
@@ -53,8 +54,8 @@ namespace artis_lab
         private void btnDeleteSelected_Click(object sender, EventArgs e)
         {
             if (listboxUsers.SelectedIndex != -1)
-                foreach (Object user in listboxUsers.SelectedItems)
-                    controller.deleteUser(user.ToString());
+                foreach (DataRowView row in listboxUsers.SelectedItems)
+                    controller.deleteUser(row[0].ToString());
         }
     }
 }
