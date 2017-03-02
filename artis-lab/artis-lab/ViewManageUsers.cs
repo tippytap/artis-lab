@@ -43,22 +43,18 @@ namespace artis_lab
 
         private void btnEditSelected_Click(object sender, EventArgs e)
         {
-            Debug.WriteLine(dataGridUsers.SelectedRows);
             foreach(DataGridViewRow row in dataGridUsers.SelectedRows)
             {
-                Debug.WriteLine(row.Cells[0].Value);
                 controller.showUser(row.Cells[0].Value.ToString());
             }
-            //if(dataGridUsers.SelectedIndex != -1)
-            //    foreach(DataRowView row in listboxUsers.SelectedItems)
-            //        controller.showUser(row[0].ToString());
         }
 
         private void btnDeleteSelected_Click(object sender, EventArgs e)
         {
-            //if (listboxUsers.SelectedIndex != -1)
-            //    foreach (DataRowView row in listboxUsers.SelectedItems)
-            //        controller.deleteUser(row[0].ToString());
+            foreach(DataGridViewRow row in dataGridUsers.SelectedRows)
+            {
+                controller.deleteUser(row.Cells[0].Value.ToString());
+            }
         }
     }
 }
