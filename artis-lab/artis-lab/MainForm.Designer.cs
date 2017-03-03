@@ -97,14 +97,16 @@
             // menuBtnLogIn
             // 
             this.menuBtnLogIn.Name = "menuBtnLogIn";
-            this.menuBtnLogIn.Size = new System.Drawing.Size(117, 22);
+            this.menuBtnLogIn.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.L)));
+            this.menuBtnLogIn.Size = new System.Drawing.Size(156, 22);
             this.menuBtnLogIn.Text = "Log In...";
             this.menuBtnLogIn.Click += new System.EventHandler(this.menuBtnLogIn_Click);
             // 
             // menuBtnLogOut
             // 
             this.menuBtnLogOut.Name = "menuBtnLogOut";
-            this.menuBtnLogOut.Size = new System.Drawing.Size(117, 22);
+            this.menuBtnLogOut.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.O)));
+            this.menuBtnLogOut.Size = new System.Drawing.Size(156, 22);
             this.menuBtnLogOut.Text = "Log Out";
             this.menuBtnLogOut.Click += new System.EventHandler(this.menuBtnLogOut_Click);
             // 
