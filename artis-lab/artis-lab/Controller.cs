@@ -122,7 +122,7 @@ namespace artis_lab
 
         public System.Data.DataTable updateUserList()
         {
-            return User.getAllUsers();
+            return User.getAllUserData();
         }
 
         public void showUser(String username)
