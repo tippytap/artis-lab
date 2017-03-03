@@ -59,6 +59,7 @@
             this.Controls.Add(this.btnGotIt);
             this.Controls.Add(this.lblMessage);
             this.Name = "ViewMessage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Error";
             this.ResumeLayout(false);
 

@@ -72,6 +72,7 @@
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.lblMessage);
             this.Name = "ViewConfirm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewConfirm";
             this.ResumeLayout(false);
 

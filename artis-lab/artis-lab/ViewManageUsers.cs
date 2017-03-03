@@ -51,9 +51,14 @@ namespace artis_lab
 
         private void btnDeleteSelected_Click(object sender, EventArgs e)
         {
-            foreach(DataGridViewRow row in dataGridUsers.SelectedRows)
+            int numSelected = dataGridUsers.SelectedRows.Count;
+            String message = "Deleting " + numSelected + " users. Are you sure? This Action cannot be undone.";
+            if (controller.confirm(message))
             {
-                controller.deleteUser(row.Cells[0].Value.ToString());
+                foreach(DataGridViewRow row in dataGridUsers.SelectedRows)
+                {
+                    controller.deleteUser(row.Cells[0].Value.ToString());
+                }
             }
         }
 

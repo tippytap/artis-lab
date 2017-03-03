@@ -108,16 +108,19 @@ namespace artis_lab
             viewUser.Close();
         }
 
+        public bool confirm(String message)
+        {
+            viewConfirm = new ViewConfirm(message);
+            viewConfirm.ShowDialog();
+            return viewConfirm.getConfirm();
+        }
+
+
         public void deleteUser(String username)
         {
-            viewConfirm = new ViewConfirm("Are you sure? This action cannot be undone.");
-            viewConfirm.ShowDialog();
-            if (viewConfirm.getConfirm())
-            {
-                User user = User.find(username, authToken);
-                viewMessage = new ViewMessage(user.delete(authToken));
-                viewMessage.ShowDialog();
-            }
+            User user = User.find(username, authToken);
+            viewMessage = new ViewMessage(user.delete(authToken));
+            viewMessage.ShowDialog();
         }
 
         public System.Data.DataTable updateUserList()
