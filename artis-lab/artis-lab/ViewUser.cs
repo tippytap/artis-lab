@@ -39,8 +39,6 @@ namespace artis_lab
         {
             txtUsername.Text = user.getUsername();
             txtNotes.Text = user.getNotes();
-            Debug.WriteLine(user.getUsername());
-            Debug.WriteLine(user.getNotes());
             dateCreatedOn.Text = user.getCreateDate().ToString();
             for(int i = 0; i < comboPriv.Items.Count; i++)
             {

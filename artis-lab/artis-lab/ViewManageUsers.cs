@@ -61,7 +61,7 @@ namespace artis_lab
         {
             String method = comboSearchMethod.SelectedItem.ToString();
             String key = txtSearch.Text;
-            if(key != null)
+            if(key != "")
             {
                 users = User.findBy(key, method);
                 loadUsers();

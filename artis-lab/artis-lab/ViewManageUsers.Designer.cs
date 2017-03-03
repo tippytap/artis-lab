@@ -111,6 +111,7 @@
             this.dataGridUsers.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.dataGridUsers.Location = new System.Drawing.Point(51, 82);
             this.dataGridUsers.Name = "dataGridUsers";
+            this.dataGridUsers.ReadOnly = true;
             this.dataGridUsers.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dataGridUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridUsers.Size = new System.Drawing.Size(524, 333);
