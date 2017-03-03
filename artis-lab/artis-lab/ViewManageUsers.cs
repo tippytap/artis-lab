@@ -56,5 +56,13 @@ namespace artis_lab
                 controller.deleteUser(row.Cells[0].Value.ToString());
             }
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            String method = comboSearchMethod.SelectedItem.ToString();
+            String key = txtSearch.Text;
+            users = User.findBy(key, method);
+            loadUsers();
+        }
     }
 }

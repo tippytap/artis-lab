@@ -119,6 +119,21 @@ namespace artis_lab
             return Program.ARTISClient.getAllUserData();
         }
 
+        public static System.Data.DataTable findBy(String key, String method)
+        {
+            System.Data.DataTable user = null;
+            switch (method)
+            {
+                case "Username contains":
+                    user = Program.ARTISClient.usernameContains(key);
+                    break;
+                case "Note contains":
+                    user = Program.ARTISClient.notesContains(key);
+                    break;
+            }
+            return user;
+        }
+
         public override String ToString()
         {
             return "Username: " + username + "\n" + password + "\n" + privLevel + "\n" + createdOn + "\n" + notes + "\n";

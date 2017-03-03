@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.comboSearchMethod = new System.Windows.Forms.ComboBox();
             this.btnEditSelected = new System.Windows.Forms.Button();
@@ -39,13 +39,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(236, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(263, 30);
-            this.textBox1.TabIndex = 0;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(236, 46);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(263, 30);
+            this.txtSearch.TabIndex = 0;
             // 
             // btnSearch
             // 
@@ -56,6 +56,7 @@
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // comboSearchMethod
             // 
@@ -137,7 +138,7 @@
             this.Controls.Add(this.btnEditSelected);
             this.Controls.Add(this.comboSearchMethod);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSearch);
             this.Name = "ViewManageUsers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Users";
@@ -149,7 +150,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.ComboBox comboSearchMethod;
         private System.Windows.Forms.Button btnEditSelected;
