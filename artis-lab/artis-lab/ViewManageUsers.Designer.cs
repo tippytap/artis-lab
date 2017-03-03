@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.comboSearchMethod = new System.Windows.Forms.ComboBox();
             this.btnEditSelected = new System.Windows.Forms.Button();
@@ -37,6 +38,7 @@
             this.dataGridUsers = new System.Windows.Forms.DataGridView();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.toolSearch = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,6 +141,10 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // toolSearch
+            // 
+            this.toolSearch.Popup += new System.Windows.Forms.PopupEventHandler(this.toolSearch_Popup);
+            // 
             // ViewManageUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,5 +179,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridUsers;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.ToolTip toolSearch;
     }
 }

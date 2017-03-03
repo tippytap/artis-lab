@@ -77,5 +77,10 @@ namespace artis_lab
         {
             refreshUsers();
         }
+
+        private void toolSearch_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
     }
 }
