@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuTopMenu = new System.Windows.Forms.MenuStrip();
             this.menuUsers = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBtnManageUsers = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,6 +40,7 @@
             this.menuBtnLogIn = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBtnLogOut = new System.Windows.Forms.ToolStripMenuItem();
             this.chartResourceUsage = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuTopMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartResourceUsage)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +86,7 @@
             // menuBtnSeeTopUsers
             // 
             this.menuBtnSeeTopUsers.Name = "menuBtnSeeTopUsers";
+            this.menuBtnSeeTopUsers.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.T)));
             this.menuBtnSeeTopUsers.Size = new System.Drawing.Size(198, 22);
             this.menuBtnSeeTopUsers.Text = "See Top Users";
             this.menuBtnSeeTopUsers.Click += new System.EventHandler(this.menuBtnSeeTopUsers_Click);
@@ -118,26 +120,37 @@
             // 
             // chartResourceUsage
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartResourceUsage.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartResourceUsage.Legends.Add(legend2);
+            chartArea5.Name = "ChartArea1";
+            this.chartResourceUsage.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chartResourceUsage.Legends.Add(legend5);
             this.chartResourceUsage.Location = new System.Drawing.Point(61, 82);
             this.chartResourceUsage.Name = "chartResourceUsage";
             this.chartResourceUsage.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartResourceUsage.Series.Add(series2);
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.chartResourceUsage.Series.Add(series5);
             this.chartResourceUsage.Size = new System.Drawing.Size(890, 595);
             this.chartResourceUsage.TabIndex = 1;
             this.chartResourceUsage.Text = "Resource Usage";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(57, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(356, 25);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Resource usage by number of bookings";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.chartResourceUsage);
             this.Controls.Add(this.menuTopMenu);
             this.MainMenuStrip = this.menuTopMenu;
@@ -164,6 +177,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuBtnLogOut;
         public System.Windows.Forms.ToolStripMenuItem menuBtnLogIn;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartResourceUsage;
+        private System.Windows.Forms.Label label1;
     }
 }
 
