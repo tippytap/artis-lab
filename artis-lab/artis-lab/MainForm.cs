@@ -55,5 +55,10 @@ namespace artis_lab
             chartResourceUsage.Series[1].XValueMember = "RNAME";
             chartResourceUsage.Series[1].YValueMembers = "LASTSEM";
         }
+
+        private void menuBtnSeeTopUsers_Click(object sender, EventArgs e)
+        {
+            controller.seeTopUsers();
+        }
     }
 }

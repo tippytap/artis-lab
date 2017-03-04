@@ -26,6 +26,7 @@ namespace artis_lab
         private ViewMessage viewMessage;
         private ViewManageUsers viewManageUsers;
         private ViewConfirm viewConfirm;
+        private ViewSeeTopUsers viewSeeTopUsers;
         //
 
         public Controller(MainForm mainForm)
@@ -115,6 +116,16 @@ namespace artis_lab
             return viewConfirm.getConfirm();
         }
 
+        public void seeTopUsers()
+        {
+            viewSeeTopUsers = new ViewSeeTopUsers(this);
+            viewSeeTopUsers.Show();
+        }
+
+        public System.Data.DataTable getTopUsers()
+        {
+            return Program.ARTISClient.getTopUsers();
+        }
 
         public void deleteUser(String username)
         {

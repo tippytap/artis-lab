@@ -87,6 +87,7 @@
             this.menuBtnSeeTopUsers.Name = "menuBtnSeeTopUsers";
             this.menuBtnSeeTopUsers.Size = new System.Drawing.Size(198, 22);
             this.menuBtnSeeTopUsers.Text = "See Top Users";
+            this.menuBtnSeeTopUsers.Click += new System.EventHandler(this.menuBtnSeeTopUsers_Click);
             // 
             // menuMyAccount
             // 

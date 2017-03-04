@@ -91,6 +91,12 @@
     <Compile Include="ViewManageUsers.Designer.cs">
       <DependentUpon>ViewManageUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewSeeTopUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewSeeTopUsers.Designer.cs">
+      <DependentUpon>ViewSeeTopUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewManageUsers.resx">
       <DependentUpon>ViewManageUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewSeeTopUsers.resx">
+      <DependentUpon>ViewSeeTopUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewUser.resx">
       <DependentUpon>ViewUser.cs</DependentUpon>
