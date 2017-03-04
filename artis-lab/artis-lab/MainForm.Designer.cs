@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuTopMenu = new System.Windows.Forms.MenuStrip();
             this.menuUsers = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBtnManageUsers = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,7 +39,9 @@
             this.menuMyAccount = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBtnLogIn = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBtnLogOut = new System.Windows.Forms.ToolStripMenuItem();
+            this.chartResourceUsage = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.menuTopMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartResourceUsage)).BeginInit();
             this.SuspendLayout();
             // 
             // menuTopMenu
@@ -110,18 +115,38 @@
             this.menuBtnLogOut.Text = "Log Out";
             this.menuBtnLogOut.Click += new System.EventHandler(this.menuBtnLogOut_Click);
             // 
+            // chartResourceUsage
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chartResourceUsage.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartResourceUsage.Legends.Add(legend2);
+            this.chartResourceUsage.Location = new System.Drawing.Point(61, 82);
+            this.chartResourceUsage.Name = "chartResourceUsage";
+            this.chartResourceUsage.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartResourceUsage.Series.Add(series2);
+            this.chartResourceUsage.Size = new System.Drawing.Size(890, 595);
+            this.chartResourceUsage.TabIndex = 1;
+            this.chartResourceUsage.Text = "Resource Usage";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.chartResourceUsage);
             this.Controls.Add(this.menuTopMenu);
             this.MainMenuStrip = this.menuTopMenu;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ARTIS Lab Admin";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuTopMenu.ResumeLayout(false);
             this.menuTopMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartResourceUsage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,6 +162,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuMyAccount;
         private System.Windows.Forms.ToolStripMenuItem menuBtnLogOut;
         public System.Windows.Forms.ToolStripMenuItem menuBtnLogIn;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartResourceUsage;
     }
 }
 

@@ -40,5 +40,12 @@ namespace artis_lab
         {
             controller.manageUsers();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            chartResourceUsage.DataSource = controller.getResourceUsage();
+            chartResourceUsage.Series[0].XValueMember = "RNAME";
+            chartResourceUsage.Series[0].YValueMembers = "CURSEM";
+        }
     }
 }

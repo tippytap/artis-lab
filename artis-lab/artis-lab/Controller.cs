@@ -138,6 +138,11 @@ namespace artis_lab
             viewUser.Show();
         }
 
+        public System.Data.DataTable getResourceUsage()
+        {
+            return Program.ARTISClient.getResourceUsage();
+        }
+
         public void manageUsers()
         {
             if (isLoggedIn())
