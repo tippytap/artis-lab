@@ -44,8 +44,16 @@ namespace artis_lab
         private void MainForm_Load(object sender, EventArgs e)
         {
             chartResourceUsage.DataSource = controller.getResourceUsage();
+
+            // series 1
+            chartResourceUsage.Series[0].Name = "Current Semester";
             chartResourceUsage.Series[0].XValueMember = "RNAME";
             chartResourceUsage.Series[0].YValueMembers = "CURSEM";
+
+            // series 2
+            chartResourceUsage.Series.Add("Last Semester");
+            chartResourceUsage.Series[1].XValueMember = "RNAME";
+            chartResourceUsage.Series[1].YValueMembers = "LASTSEM";
         }
     }
 }
