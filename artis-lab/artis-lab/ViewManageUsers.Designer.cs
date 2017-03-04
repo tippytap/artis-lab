@@ -39,6 +39,7 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.toolSearch = new System.Windows.Forms.ToolTip(this.components);
+            this.toolRefresh = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -180,5 +181,6 @@
         private System.Windows.Forms.DataGridView dataGridUsers;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.ToolTip toolSearch;
+        private System.Windows.Forms.ToolTip toolRefresh;
     }
 }

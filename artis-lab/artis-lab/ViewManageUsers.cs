@@ -22,6 +22,8 @@ namespace artis_lab
             this.controller = controller;
             this.users = users;
             loadUsers();
+            toolSearch.SetToolTip(btnSearch, "Search");
+            toolRefresh.SetToolTip(btnRefresh, "Refresh Users List");
         }
 
         private void loadUsers()
