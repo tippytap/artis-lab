@@ -45,6 +45,8 @@ namespace artis_lab
         {
             chartResourceUsage.DataSource = controller.getResourceUsage();
 
+            chartResourceUsage.ChartAreas["ChartArea1"].AxisY.Interval = 5;
+
             // series 1
             chartResourceUsage.Series[0].Name = "Current Semester";
             chartResourceUsage.Series[0].XValueMember = "RNAME";

@@ -49,7 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UserDictionary.cs" />
     <Compile Include="ViewConfirm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,7 +67,6 @@
     <Compile Include="ViewLogIn.Designer.cs">
       <DependentUpon>ViewLogIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Resource.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="MainForm.cs">

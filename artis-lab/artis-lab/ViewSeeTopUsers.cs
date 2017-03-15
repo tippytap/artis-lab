@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace artis_lab
 {
@@ -22,6 +23,9 @@ namespace artis_lab
         private void ViewSeeTopUsers_Load(object sender, EventArgs e)
         {
             chartTopUsers.DataSource = controller.getTopUsers();
+
+            chartTopUsers.ChartAreas["ChartArea1"].AxisX.Interval = 1;
+            chartTopUsers.ChartAreas["ChartArea1"].AxisY.Interval = 5;
 
             // series 1
             chartTopUsers.Series[0].Name = "Current Semester";
