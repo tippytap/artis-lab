@@ -51,8 +51,8 @@ namespace artis_lab
             {
                 loggedIn = true;
                 mainForm.menuBtnLogIn.Enabled = false;
-                mainForm.lblState.Text = LOGGED_IN;
-                mainForm.lblState.ForeColor = System.Drawing.Color.MediumSeaGreen;
+                mainForm.btnState.Text = LOGGED_IN;
+                mainForm.btnState.ForeColor = System.Drawing.Color.MediumSeaGreen;
                 viewLogin.Close();
             }
             else
@@ -71,8 +71,8 @@ namespace artis_lab
             String result = User.logOut(authToken);
             mainForm.menuBtnLogIn.Enabled = true;
             loggedIn = (result == "Success") ? false : true;
-            mainForm.lblState.Text = LOGGED_OUT;
-            mainForm.lblState.ForeColor = System.Drawing.Color.IndianRed;
+            mainForm.btnState.Text = LOGGED_OUT;
+            mainForm.btnState.ForeColor = System.Drawing.Color.IndianRed;
         }
 
         public bool isLoggedIn()
@@ -108,6 +108,7 @@ namespace artis_lab
             Dictionary<String, String> newValues = new Dictionary<String, String>();
             newValues.Add("username", username);
             newValues.Add("privLevel", privLevel);
+            newValues.Add("password", password);
             newValues.Add("notes", notes);
             User user = User.find(username, authToken);
             viewMessage = new ViewMessage(user.update(newValues, authToken));

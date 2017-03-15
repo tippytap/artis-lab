@@ -48,19 +48,26 @@ namespace artis_lab
 
         public String update(Dictionary<String, String> newValues, String authToken)
         {
-            /*ARTISLAB.ResUser userToUpdate = new ARTISLAB.ResUser();
-            String notes;
-            String username;
-            newValues.TryGetValue("username", out username);
-            newValues.TryGetValue("notes", out notes);
-            if (notes != "")
+            String username = "";
+            bool found = newValues.TryGetValue("username", out username);
+            ARTISLAB.ResUser userToUpdate = Program.ARTISClient.getResUser(username, authToken);
+
+            String notes = "";
+            found = newValues.TryGetValue("notes", out notes);
+            if (found)
                 userToUpdate.Notes = notes;
-            if (username != "")
-                userToUpdate.Username = username;*/
-            /*if (privLevel != "")
-                userToUpdate.PrivLevel = privLevel;*/
-            //return Program.ARTISClient.saveResUser(userToUpdate, authToken);
-            return "";
+
+            String privLevel = "";
+            found = newValues.TryGetValue("privLevel", out privLevel);
+            if (found)
+                userToUpdate.PrivLevel = privLevel;
+
+            String password = "";
+            found = newValues.TryGetValue("password", out password);
+            if (found && password != "")
+                userToUpdate.Password = password;
+
+            return Program.ARTISClient.saveResUser(userToUpdate, authToken);
         }
 
         public string delete(String authToken)

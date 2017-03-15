@@ -63,9 +63,9 @@ namespace artis_lab
 
         private void lblState_Click(object sender, EventArgs e)
         {
-            if (lblState.Text == Controller.LOGGED_OUT)
+            if (btnState.Text == Controller.LOGGED_OUT)
                 controller.logIn();
-            else if (lblState.Text == Controller.LOGGED_IN)
+            else if (btnState.Text == Controller.LOGGED_IN)
                 controller.logOut();
         }
     }

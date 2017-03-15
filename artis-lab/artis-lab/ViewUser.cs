@@ -31,13 +31,14 @@ namespace artis_lab
             this.type = type;
             this.controller = controller;
             setDefaultValues(user);
-            txtPassword.Enabled = false;
+            txtUsername.Enabled = false;
             this.Text = user.getUsername();
         }
 
         private void setDefaultValues(User user)
         {
             txtUsername.Text = user.getUsername();
+            //txtPassword.Text = user.getPassword();
             txtNotes.Text = user.getNotes();
             dateCreatedOn.Text = user.getCreateDate().ToString();
             for(int i = 0; i < comboPriv.Items.Count; i++)
@@ -57,7 +58,7 @@ namespace artis_lab
         private void btnSave_Click(object sender, EventArgs e)
         {
             String username = (txtUsername.Text == null) ? "" : txtUsername.Text;
-            String password = (txtPassword.Text == null) ? "" : txtPassword.Text; // this probably messed me up
+            String password = (txtPassword.Text == null) ? "" : txtPassword.Text; 
             String privLevel = (comboPriv.SelectedItem == null) ? "" : comboPriv.SelectedItem.ToString();
             String notes = (txtNotes == null) ? "" : txtNotes.Text;
             switch (type)
