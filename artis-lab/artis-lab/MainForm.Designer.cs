@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuTopMenu = new System.Windows.Forms.MenuStrip();
             this.menuUsers = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBtnManageUsers = new System.Windows.Forms.ToolStripMenuItem();
@@ -121,18 +121,18 @@
             // 
             // chartResourceUsage
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartResourceUsage.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartResourceUsage.Legends.Add(legend4);
-            this.chartResourceUsage.Location = new System.Drawing.Point(61, 82);
+            chartArea3.Name = "ChartArea1";
+            this.chartResourceUsage.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartResourceUsage.Legends.Add(legend3);
+            this.chartResourceUsage.Location = new System.Drawing.Point(12, 69);
             this.chartResourceUsage.Name = "chartResourceUsage";
             this.chartResourceUsage.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartResourceUsage.Series.Add(series4);
-            this.chartResourceUsage.Size = new System.Drawing.Size(890, 595);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartResourceUsage.Series.Add(series3);
+            this.chartResourceUsage.Size = new System.Drawing.Size(984, 648);
             this.chartResourceUsage.TabIndex = 1;
             this.chartResourceUsage.Text = "Resource Usage";
             // 
@@ -140,7 +140,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(57, 45);
+            this.label1.Location = new System.Drawing.Point(7, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(356, 25);
             this.label1.TabIndex = 2;
@@ -149,7 +149,7 @@
             // btnState
             // 
             this.btnState.ForeColor = System.Drawing.Color.IndianRed;
-            this.btnState.Location = new System.Drawing.Point(921, 35);
+            this.btnState.Location = new System.Drawing.Point(922, 40);
             this.btnState.Name = "btnState";
             this.btnState.Size = new System.Drawing.Size(75, 23);
             this.btnState.TabIndex = 4;
