@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chartTopUsers = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chartTopUsers)).BeginInit();
@@ -38,16 +38,16 @@
             // 
             // chartTopUsers
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartTopUsers.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartTopUsers.Legends.Add(legend2);
+            chartArea5.Name = "ChartArea1";
+            this.chartTopUsers.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chartTopUsers.Legends.Add(legend5);
             this.chartTopUsers.Location = new System.Drawing.Point(12, 54);
             this.chartTopUsers.Name = "chartTopUsers";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartTopUsers.Series.Add(series2);
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.chartTopUsers.Series.Add(series5);
             this.chartTopUsers.Size = new System.Drawing.Size(978, 595);
             this.chartTopUsers.TabIndex = 0;
             this.chartTopUsers.Text = "See Top Users";
@@ -55,10 +55,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 23);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(336, 20);
+            this.label1.Size = new System.Drawing.Size(366, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "User reservations by number of bookings";
             // 
