@@ -19,6 +19,8 @@ namespace artis_lab
         private bool loggedIn;
 
         private const String NOT_LOGGED_IN = "You must be logged in to perform this action.";
+        public const String LOGGED_OUT = "Logged out";
+        public const String LOGGED_IN = "Logged in";
 
         // VIEWS : Windows
         private ViewLogIn viewLogin;
@@ -49,6 +51,8 @@ namespace artis_lab
             {
                 loggedIn = true;
                 mainForm.menuBtnLogIn.Enabled = false;
+                mainForm.lblState.Text = LOGGED_IN;
+                mainForm.lblState.ForeColor = System.Drawing.Color.MediumSeaGreen;
                 viewLogin.Close();
             }
             else
@@ -67,6 +71,8 @@ namespace artis_lab
             String result = User.logOut(authToken);
             mainForm.menuBtnLogIn.Enabled = true;
             loggedIn = (result == "Success") ? false : true;
+            mainForm.lblState.Text = LOGGED_OUT;
+            mainForm.lblState.ForeColor = System.Drawing.Color.IndianRed;
         }
 
         public bool isLoggedIn()

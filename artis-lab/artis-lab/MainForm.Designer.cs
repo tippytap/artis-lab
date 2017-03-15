@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuTopMenu = new System.Windows.Forms.MenuStrip();
             this.menuUsers = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBtnManageUsers = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,6 +41,7 @@
             this.menuBtnLogOut = new System.Windows.Forms.ToolStripMenuItem();
             this.chartResourceUsage = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblState = new System.Windows.Forms.Label();
             this.menuTopMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartResourceUsage)).BeginInit();
             this.SuspendLayout();
@@ -120,17 +121,17 @@
             // 
             // chartResourceUsage
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chartResourceUsage.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chartResourceUsage.Legends.Add(legend5);
+            chartArea8.Name = "ChartArea1";
+            this.chartResourceUsage.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.chartResourceUsage.Legends.Add(legend8);
             this.chartResourceUsage.Location = new System.Drawing.Point(61, 82);
             this.chartResourceUsage.Name = "chartResourceUsage";
             this.chartResourceUsage.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chartResourceUsage.Series.Add(series5);
+            series8.ChartArea = "ChartArea1";
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.chartResourceUsage.Series.Add(series8);
             this.chartResourceUsage.Size = new System.Drawing.Size(890, 595);
             this.chartResourceUsage.TabIndex = 1;
             this.chartResourceUsage.Text = "Resource Usage";
@@ -145,11 +146,26 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Resource usage by number of bookings";
             // 
+            // lblState
+            // 
+            this.lblState.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblState.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblState.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblState.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblState.Location = new System.Drawing.Point(896, 33);
+            this.lblState.Name = "lblState";
+            this.lblState.Size = new System.Drawing.Size(100, 23);
+            this.lblState.TabIndex = 3;
+            this.lblState.Text = "Logged out";
+            this.lblState.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblState.Click += new System.EventHandler(this.lblState_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.lblState);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.chartResourceUsage);
             this.Controls.Add(this.menuTopMenu);
@@ -178,6 +194,7 @@
         public System.Windows.Forms.ToolStripMenuItem menuBtnLogIn;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartResourceUsage;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label lblState;
     }
 }
 
